@@ -199,3 +199,13 @@
     border-radius: 50%;
     display: inline-block;
   }
+
+  .site-logo {
+    max-width: 70px!important;
+}
+
+.heading {
+  text-transform:none!important;
+  margin-top: 0;
+  margin-bottom: 0;
+}
