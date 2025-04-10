@@ -1,4 +1,4 @@
-
+:root{--primary: #fc6b57!important;}
 
 .corporate-success {
     display: flex;
@@ -209,3 +209,9 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+@media screen and (max-width: 479px) {
+  .service-sticky-card{
+  width: 90vw!important;
+  margin-left: auto!important;
+  margin-right: auto!important; 
+}}
