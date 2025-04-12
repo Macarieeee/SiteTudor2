@@ -15,7 +15,7 @@
   .text p {
     font-size: 20px;
     line-height: 1.6;
-    max-width: 400px;
+    max-width: 500px;
   }
   
   .stats {
@@ -144,7 +144,7 @@
     color: white;
     padding: 12px 24px;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 60px;
     text-decoration: none;
     transition: background 0.3s ease;
     box-shadow: 0 4px 0 #c64f3f;
@@ -219,3 +219,16 @@
 .arc-image{
   font-size: 13.5px!important;
 }
+
+.bg-circle-absolute {
+  z-index: -11;
+  background-color: #2e4757!important;
+  border-radius: 50%;
+  width: 550px;
+  height: 550px;
+  position: absolute;
+}
+
+.faq-title-18px {
+
+  text-transform: none!important;}
