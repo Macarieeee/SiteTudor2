@@ -233,13 +233,41 @@
 
   text-transform: none!important;}
 
+  @media (max-width:801px) {
 
-.mobile{
+  .mobile{
   margin-left: auto!important;
   margin-right: auto!important;
   width: 93.5vw!important;
 }
 
+.mobile2{
+  width: 60vw!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+}
+
+.mobile3{
+  width: 80vw!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+}
+
+.mobile4{
+  top: 60vh;
+}
+
 .input:focus{
   border-color: #eb6d5d!important;
 }
+}
+/* .main-body{
+  width: 90vw!important;
+  margin-left: auto!important;  
+  margin-right: auto!important;
+} */
+
+.w-slider-nav{
+  top: 0vh!important;
+}
+
