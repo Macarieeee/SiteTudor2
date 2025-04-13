@@ -1,9 +1,9 @@
 const hero = document.querySelector('.hero-slider');
 
 const images = [
-  'bun (3).png',  // înlocuiește cu calea ta
-  'bun (4).png',
-  'bun (6).png'
+  'bun (3)-min.png',  
+  'bun (4)-min.png',
+  'bun (6)-min.png'
 ];
 
 let current = 0;
@@ -13,7 +13,6 @@ function changeSlide() {
   hero.style.backgroundImage = `url('${images[current]}')`;
 }
 
-setInterval(changeSlide, 5000); // schimbare la 5 secunde
+setInterval(changeSlide, 5000); 
 
-// Inițializare imagine de start
 hero.style.backgroundImage = `url('${images[0]}')`;
