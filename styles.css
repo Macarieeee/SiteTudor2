@@ -232,3 +232,14 @@
 .faq-title-18px {
 
   text-transform: none!important;}
+
+
+.mobile{
+  margin-left: auto!important;
+  margin-right: auto!important;
+  width: 93.5vw!important;
+}
+
+.input:focus{
+  border-color: #eb6d5d!important;
+}
