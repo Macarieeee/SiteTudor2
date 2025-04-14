@@ -3,7 +3,7 @@ const hero = document.querySelector('.hero-slider');
 const images = [
   'bun (3)-min.png',  
   'bun (4)-min.png',
-  'bun (6)-min.png'
+  'bun-min.png'
 ];
 
 let current = 0;
