@@ -297,3 +297,13 @@ textarea {
   display: grid;
   position: relative;
 }
+
+._8px-circle {
+  background-color: transparent!important; 
+    border-radius: 0px!important;
+    width: 8px; 
+    height: 8px;
+  border-top: 10px solid transparent!important;
+  border-bottom: 10px solid transparent!important;
+  border-left: 10px solid #fc6b57!important;
+}
