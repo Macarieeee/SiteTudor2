@@ -4,7 +4,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 80px;
     background-color: #000000;
     flex-wrap: wrap;
     width: 80%;
@@ -15,7 +14,7 @@
   .text p {
     font-size: 20px;
     line-height: 1.6;
-    max-width: 500px;
+    width: 25vw;
   }
   
   .stats {
@@ -60,7 +59,7 @@
   }
 
 
-  @media (max-width: 1488px) {
+  /* @media (max-width: 1488px) {
     .corporate-success {
         display: flex;
         justify-content: center;
@@ -68,7 +67,6 @@
         align-items: center;
         padding: 60px 80px;
         background-color: #000000;
-        flex-wrap: wrap;
         width: 80%;
         margin-left: auto;
         margin-right: auto;
@@ -85,9 +83,8 @@
         display: flex;
         align-items: center;
         gap: 120px;
-        flex-wrap: wrap;
     }
-  }
+  } */
 
 
   .hero-slider {

@@ -16,3 +16,4 @@ function changeSlide() {
 setInterval(changeSlide, 5000); 
 
 hero.style.backgroundImage = `url('${images[0]}')`;
+
