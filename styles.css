@@ -198,7 +198,7 @@
   }
 
   .site-logo {
-    max-width: 70px!important;
+    max-width: 100px!important;
 }
 
 .heading {
@@ -270,4 +270,30 @@
 
 .partner-logo{
   height: 100px!important;
+}
+textarea {
+  resize: vertical!important;
+}
+
+/*Delimitare pasrte stanga*/
+.bg-circle-absolute {
+  z-index: -11;
+  background-color: #ffa66b80;
+  border-radius: 50%;
+  width: 500px!important;
+  height: 500px!important;
+  position: absolute;
+}
+
+.image-wrapper-between {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1.25fr;
+  grid-auto-columns: 1fr;
+  justify-content: space-between;
+  place-items: center;
+  width: 40%!important;
+  display: grid;
+  position: relative;
 }
