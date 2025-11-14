@@ -5,93 +5,72 @@
 html {
     height: 100%;
 }
-
 .corporate-success {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  background-color: #000000;
-  flex-wrap: wrap;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 40px;
+  padding: 60px 0;
 }
 
-.text p {
-  font-size: 20px;
-  line-height: 1.6;
-  width: 25vw;
+.corporate-success .text {
+  flex: 1;
+  max-width: 600px;
 }
 
-.stats {
+.corporate-success .stats {
   display: flex;
+  flex-wrap: nowrap; /* IMPORTANT – nu lasă statistica pe alt rând */
+  gap: 40px;
   align-items: center;
-  gap: 80px;
-  flex-wrap: wrap;
-}
-
-.stat-box {
-  text-align: center;
 }
 
 .stat-box h2 {
-  font-size: 64px;
+  font-size: 48px;
   margin: 0;
-  font-weight: 300;
 }
 
 .stat-box p {
-  font-size: 18px;
-  margin-top: 10px;
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
 }
 
 .divider {
   width: 1px;
-  height: 80px;
-  background-color: rgba(255, 255, 255, 0.2);
-  position: relative;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.divider::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 6px;
-  height: 6px;
-  background-color: #4d4a64;
-  border-radius: 50%;
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 900px) {
+  .corporate-success {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .corporate-success .stats {
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .divider {
+    height: 30px;
+  }
 }
 
-
-/* @media (max-width: 1488px) {
-    .corporate-success {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        padding: 60px 80px;
-        background-color: #000000;
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .text p {
-        font-size: 20px;
-        line-height: 1.6;
-        max-width: 400px;
-        margin-bottom: 60px;
-      }
-
-      .stats {
-        display: flex;
-        align-items: center;
-        gap: 120px;
-    }
-  } */
-
+/* Variante MICĂ pentru a încăpea cele 3 statistici pe telefon */
+@media (max-width: 500px) {
+  .stat-box h2 {
+    font-size: 32px;
+  }
+  .stat-box p {
+    font-size: 14px;
+  }
+  .stats {
+    gap: 18px;
+  }
+}
 
 .hero-slider {
   position: relative;
@@ -386,7 +365,7 @@ textarea {
   width: 1px;
   height: 241px;
 }
-
+/* 
 .stat-box {
   opacity: 1;
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
@@ -398,12 +377,11 @@ textarea {
   justify-content: space-between;
   align-items: center;
   width: 30%;
-  /* Ajustare proporțională pentru ecrane mari */
   text-align: center;
   display: flex;
   flex-direction: column;
   height: 15vh;
-}
+} */
 
 .numbers {
   display: flex;
@@ -773,4 +751,70 @@ background: linear-gradient(90deg, rgba(252, 107, 87, 1) 0%, rgba(19, 168, 158, 
     background: #FC6B57;
 background: linear-gradient(90deg, rgba(252, 107, 87, 1) 0%, rgba(19, 168, 158, 1) 100%);
     color: #000000!important;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 60px 0;
+  background: transparent;
+  color: #ffffff; /* text alb */
+  text-align: center;
+}
+
+.feature-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 16px;
+}
+
+.feature-box h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.underline {
+  width: 30px;
+  height: 2px;
+  background-color: #ff6b4a;
+  margin: 8px 0 16px;
+}
+
+.feature-box p {
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.85;
+  max-width: 240px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .features-section {
+    grid-template-columns: repeat(2, 1fr); /* 2 pe rând */
+    gap: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .features-section {
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .feature-box h3 {
+    font-size: 18px;
+  }
+
+  .feature-box p {
+    font-size: 14px;
+  }
 }
