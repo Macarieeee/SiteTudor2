@@ -1,7 +1,21 @@
 :root {
   --primary: #fc6b57 !important;
 }
-
+.banner-top {
+    background-image: linear-gradient(180deg, var(--transparent), var(--background)), linear-gradient(to bottom, #0006, #0006), url(https://cdn.prod.website-files.com/67d1a26…/67d1a26…_Branding.avif);
+    background-position: 0 0, 0 0, 0 0;
+    background-size: auto, auto, auto;
+    min-height: auto !important;
+    margin-top: -100px;
+    padding-top: 180px;
+    padding-bottom: 0px!important;
+}
+.smooth-scroll {
+  scroll-behavior: smooth!important;
+}
+html {
+  scroll-behavior: smooth!important;
+}
 html {
     height: 100%;
 }
