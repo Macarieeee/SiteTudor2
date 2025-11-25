@@ -1376,3 +1376,87 @@ background: linear-gradient(90deg, rgba(252, 107, 87, 1) 0%, rgba(19, 168, 158, 
     font-size: 26px;
   }
 }
+
+.vacations-section {
+  padding: 60px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* GRID 3 PE RÂND */
+.vacations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.vacation-card {
+  background-color: #0fa4a3; /* schimbă cu ce vrei */
+  padding: 40px 35px 50px;
+  color: #fff;
+  min-height: 360px; /* ca să nu sară titlurile */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* TEXT SUS */
+.vacation-text {
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* TITLU JOS */
+.vacation-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+/* CTA */
+.vacation-cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.vacation-button {
+  display: inline-block;
+  background: #0fa4a3;
+  color: #fff;
+  padding: 18px 60px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.vacation-button:hover {
+  opacity: 0.85;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* Tabletă: 2 coloane */
+@media (max-width: 992px) {
+  .vacations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobil: 1 coloană */
+@media (max-width: 650px) {
+  .vacations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vacation-card {
+    padding: 30px 25px 40px;
+  }
+
+  .vacation-title {
+    font-size: 22px;
+  }
+}
