@@ -869,3 +869,510 @@ background: linear-gradient(90deg, rgba(252, 107, 87, 1) 0%, rgba(19, 168, 158, 
     font-size: 16px;
   }
 }
+
+/* Wrapper secțiune */
+.well-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff; /* dacă ai fundal negru */
+}
+
+.well-section-title h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.well-section-title p {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+/* Grid carduri */
+.well-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Fiecare card + descriere */
+.well-item {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card clickabil */
+.well-card {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+/* Interior card (fond + imagine hover) */
+.well-card-inner {
+  position: relative;
+  border-radius: 26px;
+  background-color: #ff6b4a; /* teal / îl poți schimba */
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Titlul din card */
+.well-card-title {
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Imaginea reprezentativă (ascunsă default) */
+.well-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Hover: afișează poza, ascunde textul */
+.well-card-inner:hover .well-card-image {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.well-card-inner:hover .well-card-title {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* Descriere sub card */
+.well-card-desc {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f5f5f5;
+}
+
+/* ---------- Responsive ---------- */
+
+/* max 900px: 2 carduri pe rând */
+@media (max-width: 900px) {
+  .well-item {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .well-section-title h2 {
+    font-size: 28px;
+  }
+}
+
+/* max 600px: 1 card pe rând */
+@media (max-width: 600px) {
+  .well-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .well-section {
+    padding: 40px 16px;
+  }
+
+  .well-card-inner {
+    min-height: 130px;
+  }
+
+  .well-card-title {
+    font-size: 18px;
+  }
+
+  .well-card-desc {
+    font-size: 13px;
+  }
+}
+
+.categories-section {
+  padding: 60px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+/* GRID FLEX — ca să centreze 2 pe ultimul rând */
+.categories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* CARD */
+.category-card {
+  flex: 1 1 calc(33.333% - 40px);
+  max-width: 360px;
+}
+
+/* MEDIA CONTAINER */
+.category-media {
+  background: #ff6b4a;
+  border-radius: 32px;
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT */
+.category-title {
+  font-size: 24px;
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+.category-subtitle {
+  font-size: 16px;
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.category-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ✅ RESPONSIVE BREAKPOINTS */
+
+@media (max-width: 992px) {
+  .category-card {
+    flex: 1 1 calc(50% - 40px); /* 2 pe rând */
+  }
+}
+
+@media (max-width: 600px) {
+  .category-card {
+    flex: 1 1 100%; /* 1 pe rând */
+  }
+
+  .category-media {
+    height: 160px;
+  }
+
+  .category-title {
+    font-size: 20px;
+  }
+}
+
+.benefits-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+
+.benefits-intro h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.benefits-intro p {
+  font-size: 16px;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+/* GRID cu 3 boxuri */
+.benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.benefit-card {
+  flex: 1 1 calc(33.333% - 30px);
+  max-width: 340px;
+}
+
+/* Card & hover text swap */
+.benefit-inner {
+  position: relative;
+  height: 160px;
+  border-radius: 26px;
+  overflow: hidden;
+  background-color: #ff6b4a; /* teal – schimbă dacă ai altă culoare */
+  cursor: default;
+}
+
+.benefit-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #ffffff;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* text principal vizibil default */
+.benefit-front {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* text secundar ascuns default */
+.benefit-back {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* la hover: ascundem front, arătăm back */
+.benefit-inner:hover .benefit-front {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.benefit-inner:hover .benefit-back {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .benefit-card {
+    flex: 1 1 calc(50% - 30px); /* 2 pe rând */
+  }
+
+  .benefits-intro h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .benefit-card {
+    flex: 1 1 100%; /* 1 pe rând */
+    max-width: 100%;
+  }
+
+  .benefit-inner {
+    height: auto;
+    min-height: 130px;
+  }
+
+  .benefit-face {
+    font-size: 16px;
+  }
+}
+
+.explore-section {
+  padding: 60px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+
+/* GRID: 2 pe rând, centrate */
+.explore-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.explore-card {
+  flex: 1 1 calc(50% - 40px);   /* 2 pe rând */
+  max-width: 460px;
+}
+
+/* Chenarul cu poza/video reprezentativ */
+.explore-media {
+  background: #ff6b4a;
+  border-radius: 32px;
+  overflow: hidden;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.explore-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texte */
+.explore-title {
+  font-size: 22px;
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+.explore-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+/* ---------- Responsive ---------- */
+
+/* pe ecrane mai mici -> 1 pe rând */
+@media (max-width: 768px) {
+  .explore-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .explore-media {
+    height: 190px;
+  }
+
+  .explore-title {
+    font-size: 20px;
+  }
+}
+
+.locations-section {
+  padding: 60px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  color: #fff;            /* dacă fundalul general e închis */
+}
+
+.locations-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.locations-intro {
+  font-size: 16px;
+  opacity: 0.9;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+/* GRID 3 coloane, 2 rânduri acum (extensibil la 3) */
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* CARD de locație */
+.location-card-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;                 /* raport 16:10 aproximativ */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Eticheta cu numele regiunii (normal state) */
+.location-label {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 6px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+  transition: opacity 0.3s ease;
+}
+
+/* Verso la hover */
+.location-hover {
+  position: absolute;
+  inset: 0;
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.location-hover h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.location-hover ul {
+  padding-left: 18px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Hover state: ascundem label-ul, afișăm verso-ul */
+.location-card-inner:hover .location-label {
+  opacity: 0;
+}
+
+.location-card-inner:hover .location-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tabletă: 2 coloane */
+@media (max-width: 992px) {
+  .locations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobil: 1 coloană */
+@media (max-width: 600px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .locations-title {
+    font-size: 26px;
+  }
+}
