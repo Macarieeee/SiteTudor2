@@ -1551,3 +1551,18 @@ background: linear-gradient(90deg, rgba(252, 107, 87, 1) 0%, rgba(19, 168, 158, 
 .ltm-hover:hover{
   background-color: #4f5b73!important;
 }
+
+._20px-text-white-400{
+  width:125%;
+  padding: 5px 7px;
+}
+
+._12px-circle {
+  background-color: transparent !important;
+  border-radius: 0px !important;
+  width: 8px;
+  height: 8px;
+  border-top: 13px solid transparent !important;
+  border-bottom: 13px solid transparent !important;
+  border-left: 13px solid #fc6b57 !important;
+}
