@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles-teste.css">
+</head>
+<body>
+    <section id="services" class="services-stack-section">
+  <div class="services-container">
+    <div class="services-heading">
+      <div class="services-subtitle">
+        <span class="services-dot"></span>
+        <span class="services-subtitle-text">Servicii</span>
+      </div>
+
+      <h2 class="services-title">Vezi Serviciile Noastre</h2>
+    </div>
+
+    <div class="services-stack" id="servicesStack">
+      <article class="service-card is-active" data-index="0">
+        <div class="service-card-inner">
+          <div class="service-card-content">
+            <span class="service-badge">Serviciu</span>
+            <h3 class="service-name">SEO &amp; Content Marketing</h3>
+            <p class="service-category">Digital Marketing</p>
+            <p class="service-description">
+              Creăm conținut optimizat și strategii SEO care ajută brandul tău
+              să fie găsit mai ușor, să atragă trafic relevant și să transforme
+              vizitatorii în clienți.
+            </p>
+          </div>
+
+          <div class="service-card-media">
+            <img
+              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd4d_60511.avif"
+              alt="SEO & Content Marketing"
+            />
+          </div>
+        </div>
+      </article>
+
+      <article class="service-card" data-index="1">
+        <div class="service-card-inner">
+          <div class="service-card-content">
+            <span class="service-badge">Serviciu</span>
+            <h3 class="service-name">Social Media Marketing</h3>
+            <p class="service-category">Social Media</p>
+            <p class="service-description">
+              Construim o prezență social media coerentă, atractivă și gândită
+              pentru engagement real, awareness și relații mai bune cu publicul tău.
+            </p>
+          </div>
+
+          <div class="service-card-media">
+            <img
+              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd56_Digital%20Marketing.avif"
+              alt="Social Media Marketing"
+            />
+          </div>
+        </div>
+      </article>
+
+      <article class="service-card" data-index="2">
+        <div class="service-card-inner">
+          <div class="service-card-content">
+            <span class="service-badge">Serviciu</span>
+            <h3 class="service-name">Paid Advertising</h3>
+            <p class="service-category">Lead Generation</p>
+            <p class="service-description">
+              Gestionăm campanii plătite care urmăresc rezultate clare:
+              trafic, lead-uri, vânzări și scalare profitabilă pe canalele potrivite.
+            </p>
+          </div>
+
+          <div class="service-card-media">
+            <img
+              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd4e_Paid%20Advertising.avif"
+              alt="Paid Advertising"
+            />
+          </div>
+        </div>
+      </article>
+
+      <article class="service-card" data-index="3">
+        <div class="service-card-inner">
+          <div class="service-card-content">
+            <span class="service-badge">Serviciu</span>
+            <h3 class="service-name">Branding &amp; Design</h3>
+            <p class="service-category">Creative</p>
+            <p class="service-description">
+              Construim identități vizuale și materiale creative care transmit
+              clar cine ești, cum te diferențiezi și de ce merită să fii ales.
+            </p>
+          </div>
+
+          <div class="service-card-media">
+            <img
+              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd5d_Branding.avif"
+              alt="Branding & Design"
+            />
+          </div>
+        </div>
+      </article>
+
+      <article class="service-card" data-index="4">
+        <div class="service-card-inner">
+          <div class="service-card-content">
+            <span class="service-badge">Serviciu</span>
+            <h3 class="service-name">Lead Generation</h3>
+            <p class="service-category">Email Marketing</p>
+            <p class="service-description">
+              Punem la punct sisteme de atragere a lead-urilor care aduc
+              oportunități reale de business și susțin creșterea constantă.
+            </p>
+          </div>
+
+          <div class="service-card-media">
+            <img
+              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd6a_Lead%20Generation.avif"
+              alt="Lead Generation"
+            />
+          </div>
+        </div>
+      </article>
+
+      <article class="service-card" data-index="5">
+        <div class="service-card-inner">
+          <div class="service-card-content">
+            <span class="service-badge">Serviciu</span>
+            <h3 class="service-name">Analytics &amp; Tracking</h3>
+            <p class="service-category">Data &amp; Insights</p>
+            <p class="service-description">
+              Implementăm tracking și analytics corect, astfel încât să iei
+              decizii bazate pe date reale, nu pe presupuneri.
+            </p>
+          </div>
+
+          <div class="service-card-media">
+            <img
+              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dda4_Analytics.avif"
+              alt="Analytics & Tracking"
+            />
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</body>
+<script>
+  (function () {
+    const stack = document.getElementById("servicesStack");
+    if (!stack) return;
+
+    const cards = Array.from(stack.querySelectorAll(".service-card"));
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function updateStack() {
+      const rect = stack.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+
+      const totalScrollable = Math.max(stack.offsetHeight - viewportH, 1);
+      const passed = clamp(-rect.top, 0, totalScrollable);
+      const progress = passed / totalScrollable;
+
+      const activeIndex = Math.round(progress * (cards.length - 1));
+
+      cards.forEach((card, index) => {
+        card.classList.remove("is-before", "is-active", "is-after");
+        card.removeAttribute("data-depth");
+
+        if (index < activeIndex) {
+          card.classList.add("is-before");
+          const depth = Math.min(activeIndex - index, 3);
+          card.setAttribute("data-depth", depth);
+        } else if (index === activeIndex) {
+          card.classList.add("is-active");
+        } else {
+          card.classList.add("is-after");
+        }
+      });
+    }
+
+    let ticking = false;
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateStack();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", requestTick, { passive: true });
+    window.addEventListener("resize", requestTick);
+    window.addEventListener("orientationchange", requestTick);
+    window.addEventListener("load", requestTick);
+
+    updateStack();
+  })();
+</script>
+</html>
