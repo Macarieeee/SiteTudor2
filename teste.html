@@ -1,209 +1,2534 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles-teste.css">
-</head>
-<body>
-    <section id="services" class="services-stack-section">
-  <div class="services-container">
-    <div class="services-heading">
-      <div class="services-subtitle">
-        <span class="services-dot"></span>
-        <span class="services-subtitle-text">Servicii</span>
-      </div>
+<html lang="ro">
 
-      <h2 class="services-title">Vezi Serviciile Noastre</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avant Solutions - Leisure Travel Management</title>
+  <meta name="description"
+    content="Leisure Travel Management by Avant Solutions. Experiențe premium, itinerarii personalizate și călătorii create exact după ritmul tău." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Barlow:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #05070c;
+      --bg-soft: #0b0f18;
+      --card: #101624;
+      --card-2: #131b2b;
+      --text: rgba(255, 255, 255, 0.92);
+      --text-soft: rgba(255, 255, 255, 0.76);
+      --text-muted: rgba(255, 255, 255, 0.56);
+      --border: rgba(255, 255, 255, 0.09);
+      --border-strong: rgba(255, 255, 255, 0.16);
+      --accent: #4f5b73;
+      --accent-2: #6e7d9a;
+      --gold: #dcc7a0;
+      --white: #ffffff;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+      --radius: 28px;
+      --radius-sm: 20px;
+      --container: min(1280px, 92%);
+      --nav-height: 96px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Barlow", sans-serif;
+      background:#000;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 100px 0;
+    }
+
+    .section.tight {
+      padding: 74px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), #ffffff);
+      flex-shrink: 0;
+    }
+
+    .title {
+      margin: 0 0 18px;
+      font-family: "Libre Baskerville", serif;
+      font-size: clamp(32px, 5vw, 68px);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+      color: #fff;
+    }
+
+    .title.smaller {
+      font-size: clamp(28px, 4vw, 50px);
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 780px;
+      color: var(--text-soft);
+      font-size: clamp(16px, 2vw, 21px);
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 56px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 300ms ease, background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(79, 91, 115, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-dark {
+      background: #090d15;
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 20px 0;
+    }
+
+    .site-nav {
+      width: var(--container);
+      margin: 0 auto;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 0 20px 0 26px;
+      border-radius: 999px;
+      background:
+        linear-gradient(180deg, rgba(9, 15, 25, 0.88), rgba(7, 11, 18, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.3),
+        0 0 34px rgba(79, 91, 115, 0.14);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      width: 140px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-left: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 15px;
+      font-weight: 600;
+      transition: color 300ms ease, background-color 300ms ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-link.ab-link {
+      background: linear-gradient(135deg, #f08b6d, #2cc4bc);
+      color: #111;
+    }
+
+    .nav-cta {
+      min-width: 184px;
+      min-height: 58px;
+      padding: 0 26px;
+      border-radius: 999px;
+      background: #5a6683;
+      color: #0d1118;
+      font-size: 15px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 300ms ease, background-color 300ms ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      background: #69789a;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: #fff;
+      position: relative;
+      margin: 0 auto;
+      transition: transform 300ms ease, opacity 300ms ease;
+    }
+
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .nav-toggle span::before {
+      top: -6px;
+    }
+
+    .nav-toggle span::after {
+      top: 6px;
+    }
+
+    .site-header.is-open .nav-toggle span {
+      background: transparent;
+    }
+
+    .site-header.is-open .nav-toggle span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .site-header.is-open .nav-toggle span::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 190px 0 72px;
+      display: flex;
+      align-items: flex-end;
+      isolation: isolate;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background-image:
+        linear-gradient(180deg, rgba(7, 11, 18, 0.12) 0%, rgba(7, 11, 18, 0.45) 45%, rgba(5, 7, 12, 0.92) 100%),
+        linear-gradient(90deg, rgba(5, 7, 12, 0.7) 0%, rgba(5, 7, 12, 0.22) 44%, rgba(5, 7, 12, 0.56) 100%),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center center;
+      transform: scale(1.02);
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: auto 0 -120px 0;
+      height: 320px;
+      background: radial-gradient(circle at center, rgba(79, 91, 115, 0.32), transparent 68%);
+      filter: blur(30px);
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.14fr) minmax(320px, 0.86fr);
+      gap: 40px;
+      align-items: end;
+    }
+
+    .hero-title {
+      margin: 0 0 16px;
+      font-family: "Libre Baskerville", serif;
+      font-size: clamp(42px, 7vw, 102px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      color: #f9f7f3;
+      text-transform: uppercase;
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 18px 0 22px;
+    }
+
+    .hero-divider::before,
+    .hero-divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34), transparent);
+    }
+
+    .hero-divider span {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-text {
+      max-width: 800px;
+      margin: 0 0 28px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(17px, 2vw, 24px);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .glass-card {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(180deg, rgba(10, 15, 25, 0.78), rgba(8, 11, 18, 0.92));
+      border-radius: 28px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .glass-card h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    .glass-card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .quick-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .quick-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .quick-item-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(220, 199, 160, 0.12);
+      color: var(--gold);
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .intro-copy p {
+      margin: 0 0 18px;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .mini-panel {
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+    }
+
+    .mini-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .mini-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .mini-card {
+      padding: 20px 20px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .mini-card h4 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      line-height: 1.35;
+      color: #fff;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .category-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0f1522;
+      box-shadow: var(--shadow);
+    }
+
+    .category-media {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 700ms ease;
+      transform: scale(1.02);
+    }
+
+    .category-card:hover .category-media {
+      transform: scale(1.08);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8, 10, 15, 0.08) 0%, rgba(8, 10, 15, 0.24) 34%, rgba(8, 10, 15, 0.9) 100%);
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .category-tag {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .category-title {
+      margin: 0 0 10px;
+      font-family: "Libre Baskerville", serif;
+      font-size: 30px;
+      line-height: 1.08;
+      color: #fff;
+    }
+
+    .category-subtitle {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .category-text {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 15px;
+      line-height: 1.82;
+    }
+
+    .benefits-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .benefits-copy p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .benefit-card {
+      padding: 24px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+      transition: transform 300ms ease, border-color 300ms ease, background 300ms ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(220, 199, 160, 0.22);
+      background: linear-gradient(180deg, rgba(79, 91, 115, 0.18), rgba(255, 255, 255, 0.02));
+    }
+
+    .benefit-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(79, 91, 115, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 16px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .benefit-card h3 {
+      margin: 0 0 12px;
+      font-size: 19px;
+      color: #fff;
+    }
+
+    .benefit-card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .brochure-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.78fr);
+      gap: 24px;
+      align-items: stretch;
+      padding: 24px;
+      border-radius: 32px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(79, 91, 115, 0.16), rgba(255, 255, 255, 0.02)), #0b111a;
+      box-shadow: var(--shadow);
+    }
+
+    .brochure-copy {
+      padding: 16px;
+    }
+
+    .brochure-copy p {
+      margin: 0 0 18px;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .brochure-frame {
+      min-height: 620px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #0b1018;
+    }
+
+    .brochure-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .marquee-shell {
+      margin-top: 42px;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    }
+
+    .marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 42s linear infinite;
+    }
+
+    .marquee:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 16px;
+      padding-right: 16px;
+    }
+
+    .pill {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .pill::before {
+      content: "✦";
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .possibilities-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .story-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .story-item {
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .story-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .story-item p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+   .collage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.collage-card {
+  position: relative;
+  min-height: 260px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.collage-card.tall {
+  grid-row: span 2;
+  min-height: 536px;
+}
+
+.collage-card-wide {
+  grid-column: 1 / -1;
+  min-height: 220px;
+}
+
+.collage-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 600ms ease;
+}
+
+.collage-card:hover .collage-bg {
+  transform: scale(1.07);
+}
+
+.collage-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 10, 15, 0.08), rgba(8, 10, 15, 0.82));
+}
+
+.collage-content {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1;
+}
+
+.collage-content h4 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.collage-content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media (max-width: 767px) {
+  .collage {
+    grid-template-columns: 1fr;
+  }
+
+  .collage-card,
+  .collage-card.tall,
+  .collage-card-wide {
+    min-height: 260px;
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .flip-card {
+      perspective: 1200px;
+      min-height: 440px;
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      min-height: 440px;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 700ms ease;
+    }
+
+    .flip-card:hover .flip-inner,
+    .flip-card.is-flipped .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .flip-front {
+      background: #101827;
+    }
+
+    .flip-image {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+    }
+
+    .flip-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8, 10, 15, 0.08) 0%, rgba(8, 10, 15, 0.26) 35%, rgba(8, 10, 15, 0.92) 100%);
+    }
+
+    .flip-front-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .step-no {
+      width: fit-content;
+      padding: 7px 12px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .flip-front-content h3 {
+      margin: 0;
+      color: #fff;
+      font-family: "Libre Baskerville", serif;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .flip-back {
+      padding: 26px;
+      background: linear-gradient(180deg, rgba(79, 91, 115, 0.3), rgba(11, 15, 24, 0.96)), #0c121d;
+      transform: rotateY(180deg);
+    }
+
+    .flip-back h3 {
+      margin: 0 0 16px;
+      color: #fff;
+      font-size: 24px;
+      line-height: 1.15;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .check-item .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: rgba(220, 199, 160, 0.12);
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .mobile-note {
+      display: none;
+      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .fit-card {
+      padding: 20px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .fit-card .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(220, 199, 160, 0.12);
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .fit-card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      margin-top: 34px;
+      padding: 40px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(79, 91, 115, 0.24), rgba(255, 255, 255, 0.02)), #0b111a;
+    }
+
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      inset: auto -60px -120px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(220, 199, 160, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-box p {
+      margin: 0;
+      max-width: 800px;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.85fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .quote-copy {
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(79, 91, 115, 0.14), rgba(255, 255, 255, 0.02)), rgba(255, 255, 255, 0.01);
+    }
+
+    .quote-copy p {
+      margin: 0 0 14px;
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .services-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .service-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 300ms ease, border-color 300ms ease, background 300ms ease;
+    }
+
+    .service-chip:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .service-chip.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .quote-form {
+      padding: 28px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: #0b111a;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-form h3 {
+      margin: 0;
+      color: #fff;
+      font-size: 28px;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .input,
+    .select,
+    .textarea {
+      width: 100%;
+      min-height: 58px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      padding: 0 18px;
+      outline: none;
+      transition: border-color 300ms ease, background-color 300ms ease;
+    }
+
+    .textarea {
+      min-height: 160px;
+      padding: 16px 18px;
+      resize: vertical;
+    }
+
+    .input::placeholder,
+    .textarea::placeholder {
+      color: rgba(255, 255, 255, 0.46);
+    }
+
+    .input:focus,
+    .select:focus,
+    .textarea:focus {
+      border-color: rgba(220, 199, 160, 0.35);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .select option {
+      color: #111;
+    }
+
+    .site-footer {
+      position: relative;
+      padding: 90px 0 34px;
+      background: #f3f3f4;
+      color: #20252e;
+      margin-top: 90px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 34px;
+      align-items: stretch;
+      padding-bottom: 54px;
+      border-bottom: 1px solid rgba(32, 37, 46, 0.14);
+    }
+
+    .footer-intro h2 {
+      margin: 0 0 18px;
+      color: #22252b;
+      font-size: clamp(32px, 4vw, 64px);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+    }
+
+    .footer-intro p {
+      margin: 0;
+      color: rgba(32, 37, 46, 0.84);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
+    .newsletter {
+      padding: 38px;
+      border-radius: 28px;
+      background: #5a6683;
+      color: #11151f;
+    }
+
+    .newsletter h3 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .newsletter p {
+      margin: 0 0 22px;
+      color: rgba(17, 21, 31, 0.76);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .newsletter-form {
+      position: relative;
+    }
+
+    .newsletter-input {
+      width: 100%;
+      min-height: 64px;
+      padding: 0 74px 0 22px;
+      border-radius: 999px;
+      border: 0;
+      background: #fff;
+      color: #111;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .newsletter-button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 999px;
+      background: #11151f;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.7fr 1fr;
+      gap: 44px;
+      padding: 54px 0 34px;
+      border-bottom: 1px solid rgba(32, 37, 46, 0.14);
+    }
+
+    .footer-brand img {
+      width: 220px;
+      height: auto;
+      margin-bottom: 22px;
+    }
+
+    .footer-brand p,
+    .footer-col p {
+      margin: 0;
+      color: rgba(32, 37, 46, 0.84);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .footer-brand .btn {
+      margin-top: 26px;
+    }
+
+    .footer-col h4 {
+      margin: 0 0 22px;
+      color: #11151f;
+      font-size: 22px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: rgba(17, 21, 31, 0.92);
+      font-size: 16px;
+      transition: transform 300ms ease, opacity 300ms ease;
+    }
+
+    .footer-links a:hover {
+      transform: translateX(4px);
+      opacity: 0.78;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: #5a6683;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 28px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      color: rgba(32, 37, 46, 0.78);
+      font-size: 16px;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .socials a {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: #11151f;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform 300ms ease, opacity 300ms ease;
+    }
+
+    .socials a:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    @media (max-width: 1180px) {
+
+      .hero-grid,
+      .intro-grid,
+      .benefits-wrap,
+      .brochure-card,
+      .possibilities-grid,
+      .quote-grid,
+      .footer-top,
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-grid,
+      .fit-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .nav-center {
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 6px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        padding: 16px 0;
+      }
+
+      .site-nav {
+        min-height: 72px;
+        padding: 0 14px 0 18px;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+      }
+
+      .nav-center {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        width: var(--container);
+        padding: 18px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(180deg, rgba(9, 15, 25, 0.96), rgba(7, 11, 18, 0.96));
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        display: grid;
+        gap: 14px;
+        transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
+      }
+
+      .site-header.is-open .nav-center {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-link,
+      .nav-cta {
+        width: 100%;
+      }
+
+      .nav-cta {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .section {
+        padding: 76px 0;
+      }
+
+      .section.tight {
+        padding: 58px 0;
+      }
+
+      .hero {
+        padding: 146px 0 54px;
+      }
+
+      .hero-title {
+        font-size: clamp(34px, 12vw, 60px);
+      }
+
+      .hero-text,
+      .lead,
+      .intro-copy p,
+      .benefits-copy p,
+      .brochure-copy p,
+      .quote-copy p,
+      .cta-box p,
+      .footer-intro p {
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .benefits-grid,
+      .fit-grid,
+      .collage {
+        grid-template-columns: 1fr;
+      }
+
+      .collage-card,
+      .collage-card.tall {
+        min-height: 260px;
+        grid-row: auto;
+      }
+
+      .brochure-frame {
+        min-height: 460px;
+      }
+
+      .category-card,
+      .flip-card,
+      .flip-inner {
+        min-height: 420px;
+      }
+
+      .mobile-note {
+        display: block;
+      }
+
+      .cta-box,
+      .quote-copy,
+      .quote-form,
+      .newsletter {
+        padding: 26px;
+      }
+
+      .hero-actions,
+      .btn {
+        width: 100%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .hero.hero-bottom {
+      position: relative;
+      min-height: 100vh;
+      padding: 0;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    /* 
+.hero.hero-bottom .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-image: url("https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center center;
+} */
+
+    .hero.hero-bottom .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.08) 38%, rgba(0, 0, 0, 0.2) 100%);
+    }
+
+    .hero-bottom-fade {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 42%;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.38) 72%, rgba(0, 0, 0, 0.62) 100%);
+    }
+
+    .hero-bottom-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-bottom: 70px;
+      width: 100%;
+    }
+
+    .hero-bottom-title {
+      margin: 0;
+      color: #fff;
+      font-family: "Libre Baskerville", serif;
+      font-size: clamp(42px, 7vw, 110px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero-bottom-divider {
+      width: min(1600px, 94%);
+      margin: 20px auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .hero-bottom-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-bottom-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    .hero-bottom-text {
+      margin: 0 auto;
+      max-width: 1450px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: clamp(18px, 2vw, 30px);
+      line-height: 1.5;
+    }
+
+    .hero-bottom-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 28px;
+      margin-top: 34px;
+      border-radius: 999px;
+      background: #f3a78f;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      transition: all 300ms ease;
+    }
+
+    .hero-bottom-btn:hover {
+      transform: translateY(-2px);
+      background: #f6b199;
+    }
+
+    @media (max-width: 767px) {
+      .hero-bottom-content {
+        padding-bottom: 44px;
+      }
+
+      .hero-bottom-title {
+        font-size: clamp(30px, 10vw, 52px);
+        line-height: 1.02;
+      }
+
+      .hero-bottom-divider {
+        width: 92%;
+        margin: 16px auto 18px;
+        gap: 12px;
+      }
+
+      .hero-bottom-text {
+        max-width: 92%;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .hero-bottom-btn {
+        margin-top: 24px;
+        min-height: 48px;
+        padding: 0 22px;
+        font-size: 13px;
+      }
+    }
+    .intro-section-remade {
+  padding-top: 90px;
+}
+
+.intro-top-centered {
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-centered-title {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-centered-text {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.intro-centered-text p {
+  margin: 0 0 22px;
+  color: var(--text-soft);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.intro-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1180px;
+  margin: 46px auto 0;
+}
+
+.intro-info-card {
+  padding: 26px 24px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+  text-align: left;
+  transition: transform 300ms ease, border-color 300ms ease, background 300ms ease;
+}
+
+.intro-info-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(220, 199, 160, 0.2);
+  background: linear-gradient(180deg, rgba(79, 91, 115, 0.16), rgba(255,255,255,0.02));
+}
+
+.intro-info-card h4 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.intro-info-card p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.category-grid {
+  margin-top: 56px;
+}
+@media (max-width: 767px) {
+  .intro-centered-text p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .intro-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 34px;
+  }
+
+  .intro-info-card {
+    padding: 22px 20px;
+    border-radius: 20px;
+  }
+
+  .intro-info-card h4 {
+    font-size: 20px;
+    line-height: 1.35;
+  }
+
+  .intro-info-card p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .category-grid {
+    margin-top: 40px;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="site-nav">
+      <a href="index.html" class="nav-logo" aria-label="Avant Solutions">
+        <img src="events alb.png" alt="Avant business event solutions" />
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Deschide meniul" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <div class="nav-center" id="navMenu">
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Acasă</a>
+          <a href="about.html" class="nav-link">Despre Noi</a>
+          <a href="services.html" class="nav-link">Servicii</a>
+          <a href="abexperience.html" class="nav-link ab-link">AB eXperiences</a>
+        </nav>
+
+        <a href="contactUs.html" class="nav-cta">Contactează-ne</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-bottom">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-bottom-fade"></div>
+
+      <div class="container hero-bottom-content">
+        <h1 class="hero-bottom-title">EXCLUSIVE LEISURE</h1>
+
+        <div class="hero-bottom-divider">
+          <span class="hero-bottom-line"></span>
+          <span class="hero-bottom-dot"></span>
+          <span class="hero-bottom-line"></span>
+        </div>
+
+        <a href="#brosura" class="hero-bottom-btn">Descoperă broșura ↓</a>
+      </div>
+    </section>
+
+<section class="section intro-section-remade">
+  <div class="container">
+    <div class="intro-top-centered">
+      <div class="eyebrow">Introducere</div>
+
+      <h2 class="title smaller intro-centered-title">
+        Itinerarii modelate special pentru tine. Exclusivitate. Libertate deplină.
+      </h2>
+
+      <div class="intro-centered-text">
+        <p>
+          Fie că pornești de la o destinație anume sau doar de la dorința de a călători,
+          proiectăm o experiență completă, dincolo de itinerariul obișnuit.
+          Nu livrăm pachete standard. Curatoriem experiențe autentice și exclusiviste,
+          gestionate integral, de la concept până la cele mai frumoase amintiri.
+        </p>
+
+        <p>
+          Poate fi o evadare liniștită într-un loc aproape pustiu, o experiență culturală rară,
+          un retreat premium, un safari memorabil sau o combinație între confort, descoperire și emoție.
+          Tu ne spui ce vrei să simți. De restul ne ocupăm noi.
+        </p>
+      </div>
     </div>
 
-    <div class="services-stack" id="servicesStack">
-      <article class="service-card is-active" data-index="0">
-        <div class="service-card-inner">
-          <div class="service-card-content">
-            <span class="service-badge">Serviciu</span>
-            <h3 class="service-name">SEO &amp; Content Marketing</h3>
-            <p class="service-category">Digital Marketing</p>
-            <p class="service-description">
-              Creăm conținut optimizat și strategii SEO care ajută brandul tău
-              să fie găsit mai ușor, să atragă trafic relevant și să transforme
-              vizitatorii în clienți.
-            </p>
-          </div>
+    <!-- <div class="intro-cards-grid">
+      <article class="intro-info-card">
+        <h4>Acces Privilegiat &amp; Local Insights</h4>
+        <p>
+          Dincolo de rutele turistice obișnuite, îți deschidem porțile către locații inedite,
+          experiențe private și parteneri locali selectați riguros pentru discreția și calitatea lor.
+        </p>
+      </article>
 
-          <div class="service-card-media">
-            <img
-              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd4d_60511.avif"
-              alt="SEO & Content Marketing"
-            />
+      <article class="intro-info-card">
+        <h4>Design de Călătorie Ultra-Personalizat</h4>
+        <p>
+          Fiecare itinerariu este o piesă unică, construită de la zero în funcție de ritmul și
+          preferințele tale. Nu lucrăm cu șabloane, ci cu aspirații.
+        </p>
+      </article>
+
+      <article class="intro-info-card">
+        <h4>Management Integral al Detaliilor<br />- Seamless Travel</h4>
+        <p>
+          De la logistica zborurilor private și transferuri premium, până la rezervări la restaurante
+          cu stele Michelin sau evenimente cu circuit închis – ne ocupăm de tot, pentru ca tu să fii
+          doar prezent.
+        </p>
+      </article>
+
+      <article class="intro-info-card">
+        <h4>Asistență Dedicată și Confidențialitate</h4>
+        <p>
+          Beneficiezi de suport pe parcursul întregii călătorii, având certitudinea că siguranța și
+          confidențialitatea ta sunt prioritățile noastre absolute.
+        </p>
+      </article>
+    </div> -->
+
+    <div class="category-grid">
+      <article class="category-card">
+        <div class="category-media"
+          style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80');">
+        </div>
+        <div class="category-overlay"></div>
+        <div class="category-content">
+          <div class="category-tag">Aventură</div>
+          <h3 class="category-title">Explorări autentice</h3>
+          <div class="category-subtitle">
+            Destinații spectaculoase. Ritm viu. Libertate reală.
           </div>
+          <p class="category-text">
+            De la plajele unice din Grecia și Spania, la castele medievale în Franța și Germania,
+            fiorduri și nopți albe în țările nordice sau incursiuni gastronomice în Italia,
+            există o varietate de destinații uimitoare care merită descoperite. Suntem aici să îți
+            planificăm următoarea aventură exact așa cum ți se potrivește.
+          </p>
         </div>
       </article>
 
-      <article class="service-card" data-index="1">
-        <div class="service-card-inner">
-          <div class="service-card-content">
-            <span class="service-badge">Serviciu</span>
-            <h3 class="service-name">Social Media Marketing</h3>
-            <p class="service-category">Social Media</p>
-            <p class="service-description">
-              Construim o prezență social media coerentă, atractivă și gândită
-              pentru engagement real, awareness și relații mai bune cu publicul tău.
-            </p>
-          </div>
-
-          <div class="service-card-media">
-            <img
-              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd56_Digital%20Marketing.avif"
-              alt="Social Media Marketing"
-            />
-          </div>
+      <article class="category-card">
+        <div class="category-media"
+          style="background-image: url('https://images.unsplash.com/photo-1542144582-1ba00456b5e3?auto=format&fit=crop&w=1200&q=80');">
+        </div>
+        <div class="category-overlay"></div>
+        <div class="category-content">
+          <div class="category-tag">Experiențe</div>
+          <h3 class="category-title">Momente la intensitate maximă</h3>
+          <div class="category-subtitle">Acces, atmosferă, emoție.</div>
+          <p class="category-text">
+            Bilete pentru concerte, curse de Formula 1, festivaluri sau orice alt eveniment major
+            la care vrei să iei parte — îți pregătim variante optime, recomandări potrivite și
+            toată logistica din spate, pentru ca tu să te bucuri de experiențe unice și memorabile.
+          </p>
         </div>
       </article>
 
-      <article class="service-card" data-index="2">
-        <div class="service-card-inner">
-          <div class="service-card-content">
-            <span class="service-badge">Serviciu</span>
-            <h3 class="service-name">Paid Advertising</h3>
-            <p class="service-category">Lead Generation</p>
-            <p class="service-description">
-              Gestionăm campanii plătite care urmăresc rezultate clare:
-              trafic, lead-uri, vânzări și scalare profitabilă pe canalele potrivite.
-            </p>
-          </div>
-
-          <div class="service-card-media">
-            <img
-              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd4e_Paid%20Advertising.avif"
-              alt="Paid Advertising"
-            />
-          </div>
+      <article class="category-card">
+        <div class="category-media"
+          style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');">
         </div>
-      </article>
-
-      <article class="service-card" data-index="3">
-        <div class="service-card-inner">
-          <div class="service-card-content">
-            <span class="service-badge">Serviciu</span>
-            <h3 class="service-name">Branding &amp; Design</h3>
-            <p class="service-category">Creative</p>
-            <p class="service-description">
-              Construim identități vizuale și materiale creative care transmit
-              clar cine ești, cum te diferențiezi și de ce merită să fii ales.
-            </p>
+        <div class="category-overlay"></div>
+        <div class="category-content">
+          <div class="category-tag">Relaxare</div>
+          <h3 class="category-title">Sanctuare premium</h3>
+          <div class="category-subtitle">
+            Deconectare, rafinament, timp pentru tine.
           </div>
-
-          <div class="service-card-media">
-            <img
-              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd5d_Branding.avif"
-              alt="Branding & Design"
-            />
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-index="4">
-        <div class="service-card-inner">
-          <div class="service-card-content">
-            <span class="service-badge">Serviciu</span>
-            <h3 class="service-name">Lead Generation</h3>
-            <p class="service-category">Email Marketing</p>
-            <p class="service-description">
-              Punem la punct sisteme de atragere a lead-urilor care aduc
-              oportunități reale de business și susțin creșterea constantă.
-            </p>
-          </div>
-
-          <div class="service-card-media">
-            <img
-              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dd6a_Lead%20Generation.avif"
-              alt="Lead Generation"
-            />
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-index="5">
-        <div class="service-card-inner">
-          <div class="service-card-content">
-            <span class="service-badge">Serviciu</span>
-            <h3 class="service-name">Analytics &amp; Tracking</h3>
-            <p class="service-category">Data &amp; Insights</p>
-            <p class="service-description">
-              Implementăm tracking și analytics corect, astfel încât să iei
-              decizii bazate pe date reale, nu pe presupuneri.
-            </p>
-          </div>
-
-          <div class="service-card-media">
-            <img
-              src="https://cdn.prod.website-files.com/67d1a26598ed21d474e1dc9e/67d1a26598ed21d474e1dda4_Analytics.avif"
-              alt="Analytics & Tracking"
-            />
-          </div>
+          <p class="category-text">
+            Un sejur de relaxare premium, într-o destinație exotică, cu plaje frumoase,
+            peisaje uimitoare și culturi fascinante, poate transforma o simplă vacanță
+            într-o experiență profundă de reconectare. Împreună putem găsi oaza ta perfectă.
+          </p>
         </div>
       </article>
     </div>
   </div>
 </section>
-</body>
-<script>
-  (function () {
-    const stack = document.getElementById("servicesStack");
-    if (!stack) return;
 
-    const cards = Array.from(stack.querySelectorAll(".service-card"));
+    <section class="section tight">
+      <div class="container">
+        <div class="benefits-wrap">
+          <div class="benefits-copy">
+            <div class="eyebrow">Servicii personalizate</div>
+            <h2 class="title smaller">
+              Beneficii create pentru călătorii exclusiviste
+            </h2>
+            <p>
+              Dincolo de destinație, adevărata diferență stă în felul în care este construită
+              experiența. Aici intervine rolul nostru: să transformăm dorințe, preferințe și idei
+              într-un traseu coerent, elegant și fără fricțiuni.
+            </p>
+          </div>
 
-    function clamp(value, min, max) {
-      return Math.min(Math.max(value, min), max);
-    }
+          <div class="benefits-grid">
+            <article class="benefit-card">
+              <div class="benefit-icon">01</div>
+              <h3>Acces privilegiat & local insights</h3>
+              <p>
+                Dincolo de rutele turistice obișnuite, îți deschidem porțile către locații inedite,
+                experiențe private și parteneri locali selectați riguros pentru discreția și calitatea lor.
+              </p>
+            </article>
 
-    function updateStack() {
-      const rect = stack.getBoundingClientRect();
-      const viewportH = window.innerHeight;
+            <article class="benefit-card">
+              <div class="benefit-icon">02</div>
+              <h3>Design de călătorie ultra-personalizat</h3>
+              <p>
+                Fiecare itinerariu este o piesă unică, construită de la zero în funcție de ritmul și
+                preferințele tale. Nu lucrăm cu șabloane, ci cu aspirații reale.
+              </p>
+            </article>
 
-      const totalScrollable = Math.max(stack.offsetHeight - viewportH, 1);
-      const passed = clamp(-rect.top, 0, totalScrollable);
-      const progress = passed / totalScrollable;
+            <article class="benefit-card">
+              <div class="benefit-icon">03</div>
+              <h3>Management integral al detaliilor</h3>
+              <p>
+                De la zboruri private și transferuri premium, până la restaurante speciale,
+                activități, rezervări și logistică, ne ocupăm de tot, pentru ca tu să fii doar prezent.
+              </p>
+            </article>
 
-      const activeIndex = Math.round(progress * (cards.length - 1));
+            <article class="benefit-card">
+              <div class="benefit-icon">04</div>
+              <h3>Asistență dedicată & confidențialitate</h3>
+              <p>
+                Beneficiezi de suport pe parcursul întregii călătorii, cu certitudinea că siguranța,
+                discreția și confortul tău sunt prioritățile noastre absolute.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      cards.forEach((card, index) => {
-        card.classList.remove("is-before", "is-active", "is-after");
-        card.removeAttribute("data-depth");
+    <section class="section" id="brosura">
+      <div class="container">
+        <div class="brochure-card">
+          <div class="brochure-copy">
+            <div class="eyebrow">Colecția noastră</div>
+            <h2 class="title smaller">
+              Inspiră-te din colecția noastră de vacanțe
+            </h2>
 
-        if (index < activeIndex) {
-          card.classList.add("is-before");
-          const depth = Math.min(activeIndex - index, 3);
-          card.setAttribute("data-depth", depth);
-        } else if (index === activeIndex) {
-          card.classList.add("is-active");
-        } else {
-          card.classList.add("is-after");
+            <p>
+              Aici poți integra broșura exact în zona „Descoperă”, așa cum a fost cerut în direcția
+              din document. Vizual, ajută mult pentru senzația de pagină premium și aerisită.
+            </p>
+
+            <p>
+              Am lăsat embed direct în pagină. Dacă vrei, în pasul următor o pot schimba cu un preview mai elegant,
+              cu copertă custom și buton de deschidere într-un modal.
+            </p>
+
+            <div class="hero-actions">
+              <a href="https://heyzine.com/flip-book/41cd47d3a9.html#page/20" target="_blank" class="btn btn-primary">
+                Deschide broșura completă
+              </a>
+              <a href="#quote" class="btn btn-secondary">
+                Vreau o experiență creată pentru mine
+              </a>
+            </div>
+          </div>
+
+          <div class="brochure-frame">
+            <iframe src="https://heyzine.com/flip-book/41cd47d3a9.html#page/20" title="Broșură Leisure Travel"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="marquee-shell">
+          <div class="marquee">
+            <div class="marquee-track">
+              <span class="pill">Safari</span>
+              <span class="pill">Cruises</span>
+              <span class="pill">Resorts</span>
+              <span class="pill">Custom Trips</span>
+              <span class="pill">Wellness</span>
+              <span class="pill">Honeymoon</span>
+              <span class="pill">Sailing</span>
+              <span class="pill">Family Trips</span>
+              <span class="pill">Concerts</span>
+              <span class="pill">Formula 1</span>
+              <span class="pill">Ski</span>
+              <span class="pill">Winter</span>
+              <span class="pill">Gastronomy</span>
+              <span class="pill">Cultural</span>
+            </div>
+
+            <div class="marquee-track" aria-hidden="true">
+              <span class="pill">Safari</span>
+              <span class="pill">Cruises</span>
+              <span class="pill">Resorts</span>
+              <span class="pill">Custom Trips</span>
+              <span class="pill">Wellness</span>
+              <span class="pill">Honeymoon</span>
+              <span class="pill">Sailing</span>
+              <span class="pill">Family Trips</span>
+              <span class="pill">Concerts</span>
+              <span class="pill">Formula 1</span>
+              <span class="pill">Ski</span>
+              <span class="pill">Winter</span>
+              <span class="pill">Gastronomy</span>
+              <span class="pill">Cultural</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="possibilities-grid">
+          <div>
+            <div class="eyebrow">Ce facem pentru tine?</div>
+            <h2 class="title smaller">
+              Îți creăm experiențe exact așa cum ți le imaginezi. Sau chiar mai mult.
+            </h2>
+            <p class="lead">
+              Poate știi exact ce vrei. Sau poate încă nu știi, dar ai câteva zile libere și vrei ceva diferit.
+              Indiferent de punctul din care pleci, noi ne ocupăm de tot: de la inspirație și concept,
+              la rezervări, logistică, acces special și suport pe tot parcursul călătoriei.
+            </p>
+
+            <div class="story-list">
+              <article class="story-item">
+                <strong>„Am liber între 1–7 aprilie, dar nu știu unde să merg.”</strong>
+                <p>
+                  Analizăm ce îți place, ce se întâmplă în lume în perioada aceea și îți propunem
+                  cele mai interesante experiențe posibile exact atunci.
+                </p>
+              </article>
+
+              <article class="story-item">
+                <strong>„Vreau liniște totală. O plajă aproape pustie. Mâncare bună. Fără oameni.”</strong>
+                <p>
+                  Căutăm exact locul potrivit, în momentul potrivit, cu nivelul de intimitate și confort
+                  care chiar contează pentru tine.
+                </p>
+              </article>
+
+              <article class="story-item">
+                <strong>„Vreau o experiență culturală unică.”</strong>
+                <p>
+                  Poate fi un eveniment artistic rar, un festival, un oraș în perioada lui de vârf
+                  sau un acces special într-un loc care în mod normal nu se trăiește așa.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="collage">
+  <article class="collage-card tall">
+    <div class="collage-bg"
+      style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80');">
+    </div>
+    <div class="collage-shade"></div>
+    <div class="collage-content">
+      <h4>Resorts & Hideaways</h4>
+      <p>Locuri care nu doar arată bine, ci te fac să simți că ai ajuns exact unde trebuia.</p>
+    </div>
+  </article>
+
+  <article class="collage-card">
+    <div class="collage-bg"
+      style="background-image:url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=900&q=80');">
+    </div>
+    <div class="collage-shade"></div>
+    <div class="collage-content">
+      <h4>Formula 1 & Events</h4>
+      <p>Acces, energie, ritm și experiențe memorabile.</p>
+    </div>
+  </article>
+
+  <article class="collage-card">
+    <div class="collage-bg"
+      style="background-image:url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=80');">
+    </div>
+    <div class="collage-shade"></div>
+    <div class="collage-content">
+      <h4>Private Escapes</h4>
+      <p>Relaxare, discreție și detalii atent orchestrate.</p>
+    </div>
+  </article>
+
+  <article class="collage-card collage-card-wide">
+    <div
+      class="collage-bg"
+      style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80');"
+    ></div>
+    <div class="collage-shade"></div>
+    <div class="collage-content">
+      <h4>Luxury Coastal Escapes</h4>
+      <p>Peisaje spectaculoase, ritm lent și experiențe premium gândite până la ultimul detaliu.</p>
+    </div>
+  </article>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Cum funcționează?</div>
+        <h2 class="title smaller">Totul începe cu tine.</h2>
+        <p class="lead">
+          Mai jos ai varianta premium pentru zona de proces. Pe desktop, cardurile se întorc la hover.
+          Pe mobil, se întorc la tap.
+        </p>
+        <div class="mobile-note">Pe mobil, apasă pe card pentru a vedea detaliile.</div>
+
+        <div class="steps-grid">
+          <article class="flip-card" data-flip-card>
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <div class="flip-image"
+                  style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80');">
+                </div>
+                <div class="flip-overlay"></div>
+                <div class="flip-front-content">
+                  <div class="step-no">Pasul 1</div>
+                  <h3>Chestionar personalizat</h3>
+                </div>
+              </div>
+
+              <div class="flip-face flip-back">
+                <h3>Ce vrem să înțelegem?</h3>
+                <div class="check-list">
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Ce îți place și ce nu îți place
+                  </div>
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Ce te relaxează și ce te entuziasmează
+                  </div>
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Ce tip de experiențe îți rămân în minte
+                  </div>
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Ce fel de ritm ți se potrivește cu adevărat
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card" data-flip-card>
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <div class="flip-image"
+                  style="background-image:url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80');">
+                </div>
+                <div class="flip-overlay"></div>
+                <div class="flip-front-content">
+                  <div class="step-no">Pasul 2</div>
+                  <h3>Concept de experiență</h3>
+                </div>
+              </div>
+
+              <div class="flip-face flip-back">
+                <h3>Îți propunem variante construite pe profilul tău</h3>
+                <div class="check-list">
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Destinații alese în funcție de preferințele tale
+                  </div>
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Tipul de experiență dorit: relaxare, explorare, cultură, aventură
+                  </div>
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Ritmul potrivit pentru tine și experiențe locale autentice
+                  </div>
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Opțiuni clare, din care poți alege ce ți se potrivește cel mai bine
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card" data-flip-card>
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <div class="flip-image"
+                  style="background-image:url('https://images.unsplash.com/photo-1501554728187-ce583db33af7?auto=format&fit=crop&w=1200&q=80');">
+                </div>
+                <div class="flip-overlay"></div>
+                <div class="flip-front-content">
+                  <div class="step-no">Pasul 3</div>
+                  <h3>Organizare completă</h3>
+                </div>
+              </div>
+
+              <div class="flip-face flip-back">
+                <h3>Ne ocupăm de tot</h3>
+                <div class="check-list">
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Transport, cazare și experiențe & activități
+                  </div>
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Acces special, evenimente și logistică
+                  </div>
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Rezervări, detalii, sincronizare completă
+                  </div>
+                  <div class="check-item">
+                    <span class="dot">✓</span>
+                    Suport non-stop pe toată durata călătoriei
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="cta-box">
+          <div class="eyebrow">Orice este posibil</div>
+          <h2 class="title smaller">
+            Spune-ne ce vrei să simți sau să experimentezi.
+          </h2>
+          <p>
+            Nu există dorințe prea specifice. Există doar experiențe încă necreate.
+            Exact aici se vede diferența dintre o rezervare și un travel design făcut cum trebuie.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container">
+        <div class="eyebrow">Ți se potrivește?</div>
+        <h2 class="title smaller">
+          Acest serviciu este pentru tine dacă vrei mai mult decât o vacanță obișnuită.
+        </h2>
+
+        <div class="fit-grid">
+          <article class="fit-card">
+            <span class="icon">✓</span>
+            <p>
+              Vrei ceva diferit, construit în jurul tău, nu în jurul unui pachet standard.
+            </p>
+          </article>
+
+          <article class="fit-card">
+            <span class="icon">✓</span>
+            <p>
+              Nu ai timp, energie sau răbdare să cauți ore întregi printre opțiuni care nu ți se potrivesc.
+            </p>
+          </article>
+
+          <article class="fit-card">
+            <span class="icon">✓</span>
+            <p>
+              Apreciezi experiențele gândite în detaliu și vrei să simți că cineva chiar a înțeles
+              ce îți dorești.
+            </p>
+          </article>
+
+          <article class="fit-card">
+            <span class="icon">✓</span>
+            <p>
+              Vrei să fii surprins plăcut, dar în același timp să ai control, claritate și suport real.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight" id="quote">
+      <div class="container">
+        <div class="quote-grid">
+          <div class="quote-copy">
+            <div class="eyebrow">Consultanță privată</div>
+            <h2 class="title smaller">
+              Spune-ne ce îți dorești. Sau spune-ne doar când ești liber.
+            </h2>
+            <p>
+              De restul ne ocupăm noi. Putem porni de la o destinație, de la o stare,
+              de la un interval liber din calendar sau doar de la ideea că vrei ceva memorabil.
+            </p>
+            <p>
+              Formularul de mai jos este gata vizual. În pasul următor pot să ți-l leg fie la EmailJS,
+              fie la scriptul tău de trimitere.
+            </p>
+
+            <div class="services-strip">
+              <a href="businessevents.html" class="service-chip">Business Events</a>
+              <a href="teambuilding.html" class="service-chip">Teambuilding</a>
+              <a href="marketing&pr.html" class="service-chip">Marketing & PR</a>
+              <a href="incentives.html" class="service-chip">Incentives</a>
+              <a href="businesstravelmanagement.html" class="service-chip">Business Travel</a>
+              <a href="abexperience.html" class="service-chip">AB eXperience</a>
+              <a href="leisuretravel.html" class="service-chip active">Leisure Travel</a>
+            </div>
+          </div>
+
+          <div class="quote-form">
+            <h3>Creează experiența mea</h3>
+
+            <form class="form-grid" id="travelForm">
+              <input class="input" type="text" placeholder="Numele tău" required />
+              <input class="input" type="email" placeholder="Email" required />
+
+              <select class="select" required>
+                <option value="">Alege serviciul</option>
+                <option value="Leisure Travel Management" selected>Leisure Travel Management</option>
+                <option value="Business Events">Business Events</option>
+                <option value="Teambuilding">Teambuilding</option>
+                <option value="Marketing & PR">Marketing & PR</option>
+                <option value="Incentives">Incentives</option>
+                <option value="Business Travel Management">Business Travel Management</option>
+                <option value="AB eXperience">AB eXperience</option>
+              </select>
+
+              <textarea class="textarea"
+                placeholder="Spune-ne ce fel de experiență îți dorești, când ai vrea să pleci sau ce vrei să simți."></textarea>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                Trimite cererea
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-intro">
+          <h2>Inspirăm împreună</h2>
+          <p>
+            Construim experiențe de leisure premium pentru oameni care vor mai mult decât o vacanță.
+            De la evadări exclusiviste și itinerarii personalizate, până la acces special și suport real,
+            suntem aici pentru călătorii memorabile, atent gândite de la început până la final.
+          </p>
+        </div>
+
+        <div class="newsletter">
+          <h3>Abonează-te la newsletter</h3>
+          <p>
+            Fii la curent cu idei, destinații și experiențe premium care merită descoperite.
+          </p>
+
+          <form class="newsletter-form">
+            <input class="newsletter-input" type="email" placeholder="Email-ul tău" required />
+            <button class="newsletter-button" type="submit">→</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="events albastru.png" alt="Avant Solutions" />
+          <p>
+            Leisure Travel Management by Avant Solutions.
+            Experiențe premium, itinerarii personalizate și călătorii create exact după tine.
+          </p>
+          <a href="contactUs.html" class="btn btn-dark">Hai să vorbim</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Link-uri</h4>
+          <div class="footer-links">
+            <a href="index.html">Acasă</a>
+            <a href="about.html">Despre Noi</a>
+            <a href="services.html">Servicii</a>
+            <a href="contactUs.html">Contactează-ne</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Servicii</h4>
+          <div class="footer-links">
+            <a href="businessevents.html">Business Events</a>
+            <a href="businesstravelmanagement.html">Business Travel</a>
+            <a href="leisuretravel.html">Leisure Travel</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="contact-list">
+            <div class="contact-item">
+              <span class="contact-icon">A</span>
+              <p>Strada Dianei, Nr. 16, Sector 2<br />București, România</p>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon">T</span>
+              <p>0213 110 700</p>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon">@</span>
+              <p>office@avantsolutions.ro</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright © Avant Solutions | Build by Macarie Mihai-Alexandru</p>
+
+        <div class="socials">
+          <a href="https://www.facebook.com/AvantBusinessEventsSolutions/" target="_blank" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/avant_business_events/" target="_blank" aria-label="Instagram">ig</a>
+          <a href="https://www.linkedin.com/company/avant-business-events-solutions/?viewAsMember=true" target="_blank"
+            aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById("siteHeader");
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href");
+        if (!targetId || targetId === "#") return;
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        e.preventDefault();
+
+        const nav = document.querySelector(".site-nav");
+        const navHeight = nav ? nav.offsetHeight : 0;
+        const y = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 24;
+
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+
+        header.classList.remove("is-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.querySelectorAll("[data-flip-card]").forEach((card) => {
+      card.addEventListener("click", () => {
+        if (window.innerWidth <= 991) {
+          card.classList.toggle("is-flipped");
         }
       });
-    }
+    });
 
-    let ticking = false;
+    document.getElementById("travelForm")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Formularul este pregătit vizual. Următorul pas este conectarea la EmailJS sau backend.");
+    });
+  </script>
+</body>
 
-    function requestTick() {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          updateStack();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    window.addEventListener("scroll", requestTick, { passive: true });
-    window.addEventListener("resize", requestTick);
-    window.addEventListener("orientationchange", requestTick);
-    window.addEventListener("load", requestTick);
-
-    updateStack();
-  })();
-</script>
 </html>

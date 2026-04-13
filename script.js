@@ -17,3 +17,24 @@ setInterval(changeSlide, 5000);
 
 hero.style.backgroundImage = `url('${images[0]}')`;
 
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const reveals = document.querySelectorAll(".corporate-success .reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+  });
+
