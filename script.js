@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ]);
 
     initHeroSlider(".hero-slider-btm", [
-      "bun (3)-min.png",
-      "bun (4)-min.png",
-      "bun-min.png"
+      "Bt banner 1.jpg",
+      "BT Banner 02.jpg",
+      "Bt banner 6.jpg"
     ]);
   });
 
