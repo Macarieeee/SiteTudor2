@@ -313,11 +313,9 @@ html {
   }
 }
 
-/* .main-body{
-  width: 90vw!important;
-  margin-left: auto!important;  
-  margin-right: auto!important;
-} */
+.main-body{
+  margin-top: 0px !important;
+}
 
 .w-slider-nav {
   top: 0vh !important;
@@ -2090,4 +2088,273 @@ img {
 
 .corporate-success .delay-4 {
   transition-delay: 0.46s;
+}
+
+.main-block.business-travel-black {
+    background: #000;
+    color: #fff;
+    padding: 18px;
+    width: 100%;
+  }
+
+  .business-travel-black * {
+    box-sizing: border-box;
+  }
+
+  .business-travel-black .bt-title {
+    color: #fff;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 700;
+    margin: 0 0 28px;
+    padding: 8px 14px;
+  }
+
+  .business-travel-black .bt-intro-label {
+    color: #ff4b4b;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .business-travel-black .bt-intro {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0 0 34px;
+  }
+
+  .business-travel-black .bt-intro strong {
+    color: #13a89e;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .business-travel-black .bt-section-title {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 700;
+    margin: 0 0 18px;
+  }
+
+  .bt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 110px;
+  }
+
+  .bt-grid.bt-grid-second {
+    margin-bottom: 24px;
+  }
+
+  .bt-card {
+    color: #fff;
+    text-align: center;
+  }
+
+  .bt-card img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 12px;
+    border-radius: 12px;
+  }
+
+  .bt-card h4 {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+
+  .bt-card p {
+    color: #fff;
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .bt-card ul {
+    color: #fff;
+    text-align: left;
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .bt-card li {
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .bt-final-title {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 24px 0 0;
+  }
+
+  @media (max-width: 991px) {
+    .bt-grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 70px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .main-block.business-travel-black {
+      padding: 14px;
+    }
+
+    .business-travel-black .bt-title {
+      font-size: 19px;
+    }
+
+    .bt-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .bt-card img {
+      height: 210px;
+    }
+  }
+
+.hero-slider,
+.hero-slider-btm {
+  position: relative;
+  min-height: 90vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1.4s ease-in-out, transform 6s ease;
+  z-index: 0;
+}
+
+.hero-bg-layer.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.custom-cursor-dot,
+.custom-cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.custom-cursor-outline {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor-dot,
+  .custom-cursor-outline {
+    display: none;
+  }
+}
+
+.exclusive-brochure-section {
+  padding: 80px 20px;
+  background: #f7f2e8;
+}
+
+.exclusive-brochure-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.brochure-label {
+  display: inline-block;
+  color: #c8ad7f;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.exclusive-brochure-container h2 {
+  color: #2b261f;
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.exclusive-brochure-container p {
+  color: #5f574d;
+  font-size: 18px;
+  margin-bottom: 36px;
+}
+
+.brochure-frame {
+  width: 100%;
+  height: 720px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+  background: #fff;
+}
+
+.brochure-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .exclusive-brochure-section {
+    padding: 50px 16px;
+  }
+
+  .exclusive-brochure-container h2 {
+    font-size: 30px;
+  }
+
+  .brochure-frame {
+    height: 520px;
+    border-radius: 16px;
+  }
 }
