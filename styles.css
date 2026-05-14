@@ -1,6 +1,14 @@
 :root {
   --primary: #fc6b57 !important;
 }
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 .banner-top {
     background-image: linear-gradient(180deg, var(--transparent), var(--background)), linear-gradient(to bottom, #0006, #0006), url(https://cdn.prod.website-files.com/67d1a26…/67d1a26…_Branding.avif);
     background-position: 0 0, 0 0, 0 0;
@@ -920,9 +928,6 @@ background: linear-gradient(90deg, rgba(252, 107, 87, 1) 0%, rgba(19, 168, 158, 
 }
 
 /* Wrapper secțiune */
-.well-section {
-  padding: clamp(48px, 6vw, 80px) 0;
-}
 
 .well-section-title {
   display: grid;
@@ -1175,6 +1180,48 @@ background: linear-gradient(90deg, rgba(252, 107, 87, 1) 0%, rgba(19, 168, 158, 
   text-align: center;
 }
 
+.well-explore h2 {
+  display: inline-block;
+  width: fit-content;
+
+  background: linear-gradient(
+    90deg,
+    rgba(252, 107, 87, 1) 0%,
+    rgba(19, 168, 158, 1) 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.benefit-face {
+  background: linear-gradient(
+    90deg,
+    rgba(252, 107, 87, 1) 0%,
+    rgba(19, 168, 158, 1) 100%
+  );
+
+  background-size: calc(300% + 64px) 100%;
+}
+
+.benefit-card:nth-child(1) .benefit-face {
+  background-position: left center;
+}
+
+.benefit-card:nth-child(2) .benefit-face {
+  background-position: center center;
+}
+
+.benefit-card:nth-child(3) .benefit-face {
+  background-position: right center;
+}
 .benefits-section {
   padding: 60px 20px;
   max-width: 1200px;
@@ -1402,8 +1449,8 @@ background: linear-gradient(90deg, rgba(252, 107, 87, 1) 0%, rgba(19, 168, 158, 
   color: #fff;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0)
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.4)
   );
   transition: opacity 0.3s ease;
 }
@@ -1918,16 +1965,27 @@ img {
   }
 
   .services-stack {
-    min-height: 260vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    min-height: 420vh;
+    padding-bottom: 90px;
+    overflow: visible;
   }
 
   .service-card {
-    top: 20px;
+    position: sticky;
+    top: 80px;
+    z-index: 1;
   }
 
   .service-card-inner {
     grid-template-columns: 1fr;
-    min-height: auto;
+    width: min(92vw, 760px);
+    height: auto !important;
+    min-height: unset !important;
+    max-height: none !important;
     gap: 24px;
     padding: 24px;
     border-radius: 28px;
@@ -1937,7 +1995,9 @@ img {
     padding: 8px;
   }
 
-  .service-title-pill {
+  .service-title-pill,
+  .service-title-pill-ab,
+  .service-title-pill-btm {
     gap: 14px;
     padding: 16px 20px 16px 18px;
     margin-bottom: 24px;
@@ -1956,7 +2016,7 @@ img {
   .service-description {
     max-width: 100%;
     font-size: 18px;
-    line-height: 1.65;
+    line-height: 1.55;
     margin-bottom: 24px;
   }
 
@@ -1967,12 +2027,28 @@ img {
     padding: 16px 24px;
   }
 
+  .service-card-media {
+    height: auto;
+  }
+
   .service-card-media img {
-    height: 340px;
+    width: 100%;
+    height: auto;
+    max-height: 340px;
+    object-fit: cover;
   }
 }
 
 @media (max-width: 640px) {
+  .services-stack-section {
+    padding: 72px 0 0;
+    overflow: clip;
+  }
+
+  .services-container {
+    width: min(94%, 94%);
+  }
+
   .services-heading {
     margin-bottom: 36px;
     gap: 18px;
@@ -1987,28 +2063,33 @@ img {
   }
 
   .services-title {
-    font-size: clamp(30px, 9vw, 42px);
-  }
-  .services-stack-section {
-    padding: 72px 0 0px;
-  }
-
-  .services-title {
     font-size: clamp(30px, 9vw, 44px);
   }
 
   .services-stack {
-    min-height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     gap: 22px;
-    padding-bottom: 0;
+    min-height: 520vh;
+    padding-bottom: 70px;
+    overflow: visible;
   }
 
   .service-card {
-    position: relative;
-    top: 0;
+    position: sticky;
+    top: 72px;
+    z-index: 1;
   }
 
   .service-card-inner {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: none !important;
+    margin: 0 auto;
+    gap: 18px;
     padding: 18px;
     border-radius: 24px;
   }
@@ -2017,19 +2098,35 @@ img {
     padding: 2px;
   }
 
-  .service-title-pill {
+  .service-title-pill,
+  .service-title-pill-ab,
+  .service-title-pill-btm {
     width: 100%;
+    gap: 12px;
     padding: 14px 16px;
     margin-bottom: 18px;
   }
 
+  .service-title-arrow {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 12px solid #ff715b;
+  }
+
+  .service-title-arrow-ab,
+  .service-title-arrow-btm {
+    width: 12px;
+    height: 21px;
+  }
+
   .service-name {
     font-size: 24px;
+    line-height: 1.1;
   }
 
   .service-description {
     font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.55;
     margin-bottom: 18px;
   }
 
@@ -2040,8 +2137,28 @@ img {
     padding: 14px 22px;
   }
 
+  .service-card-media {
+    height: auto;
+  }
+
   .service-card-media img {
-    height: 220px;
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .service-card.is-active {
+    z-index: 2;
+  }
+
+  .service-card.is-before {
+    z-index: 1;
+  }
+
+  .service-card.is-after {
+    z-index: 3;
   }
 }
 
@@ -2442,3 +2559,472 @@ img {
     padding: 60px 20px;
   }
 }
+.well-programs-section {
+  width: 100%;
+  padding: 24px 0;
+}
+
+.well-programs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+.well-program-card {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #111;
+  text-decoration: none;
+  color: #fff;
+  isolation: isolate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.well-program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+.well-program-image-wrap {
+  position: relative;
+  width: 42%;
+  min-height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.well-program-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.well-program-card:hover .well-program-image {
+  transform: scale(1.06);
+}
+
+.well-program-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+}
+
+.well-program-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 34px;
+  flex: 1;
+}
+
+.well-program-content h3 {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.1;
+  font-weight: 700;
+  color: #fff;
+}
+
+.well-program-content p {
+  margin: 0;
+  max-width: 620px;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .well-program-card {
+    min-height: 200px;
+  }
+
+  .well-program-image-wrap {
+    width: 38%;
+    min-height: 200px;
+  }
+
+  .well-program-content {
+    padding: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .well-programs-section {
+    padding: 18px 0;
+  }
+
+  .well-programs-list {
+    gap: 18px;
+  }
+
+  .well-program-card {
+    flex-direction: column;
+    min-height: auto;
+    border-radius: 20px;
+  }
+
+  .well-program-image-wrap {
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .well-program-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+  }
+
+  .well-program-content {
+    padding: 24px;
+  }
+
+  .well-program-content h3 {
+    font-size: 26px;
+  }
+
+  .well-program-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .well-program-image-wrap {
+    height: 190px;
+    min-height: 190px;
+  }
+
+  .well-program-content {
+    padding: 20px;
+  }
+
+  .well-program-content h3 {
+    font-size: 23px;
+  }
+}
+
+.abex-intro p {
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
+
+.well-section {
+  margin-top: 54px;
+}
+
+.well-section-title {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.well-section-title h2 {
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.well-section-title p {
+  margin: 0;
+  text-align: center !important;
+  line-height: 1.4;
+  opacity: 0.82;
+}
+
+.well-programs-section {
+  width: 100%;
+  padding: 0;
+}
+
+.well-programs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.well-program-card {
+  display: flex;
+  width: 100%;
+  min-height: 165px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #111;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.well-program-card:hover {
+  transform: translateY(-3px);
+  background: #151515;
+}
+
+.well-program-image-wrap {
+  position: relative;
+  width: 42%;
+  min-height: 165px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.well-program-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.well-program-card:hover .well-program-image {
+  transform: scale(1.05);
+}
+
+.well-program-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.well-program-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px 32px;
+  flex: 1;
+}
+
+.well-program-content h3 {
+  margin: 0 0 18px;
+  color: #fff;
+}
+
+.well-program-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.well-extra-section {
+  margin-top: 34px;
+  padding-bottom: 40px;
+}
+
+.well-extra-card {
+  background: #111;
+  border-radius: 22px;
+  padding: 34px;
+  color: #fff;
+}
+
+
+.well-extra-card h2 {
+  margin: 0 0 18px;
+  color: #fff;
+}
+
+.well-extra-card > p {
+  margin: 0 0 28px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.well-extra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.well-extra-point {
+  padding: 20px;
+  border-radius: 16px;
+  background: #000;
+}
+
+.well-extra-point h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 17px;
+}
+
+.well-extra-point p {
+  margin: 0;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .well-program-card {
+    min-height: 150px;
+  }
+
+  .well-program-image-wrap {
+    width: 38%;
+    min-height: 150px;
+  }
+
+  .well-program-content {
+    padding: 24px;
+  }
+
+  .well-extra-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .well-section {
+    margin-top: 38px;
+  }
+
+  .well-section-title {
+    margin-bottom: 24px;
+  }
+
+  .well-program-card {
+    flex-direction: column;
+  }
+
+  .well-program-image-wrap {
+    width: 100%;
+    height: 190px;
+    min-height: 190px;
+  }
+
+  .well-program-content {
+    padding: 22px;
+  }
+
+  .well-program-content h3 {
+    margin-bottom: 10px;
+  }
+
+  .well-extra-card {
+    padding: 24px;
+  }
+}
+
+.well-section-title {
+  width: 100%;
+  max-width: 100%;
+  text-align: center !important;
+  margin: 0 auto 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.well-section-title h2 {
+  width: 100%;
+  margin: 0 0 6px !important;
+  text-align: center !important;
+  color: #fff;
+}
+
+.well-section-title p {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* suprascrie stilurile Webflow / rich text */
+.rich-text-block.w-richtext .well-section-title h2,
+.rich-text-block.w-richtext .well-section-title p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* secțiunea simplificată de jos */
+.well-extra-section {
+  margin-top: 34px;
+  padding-bottom: 40px;
+}
+
+.well-extra-card {
+  background: #111;
+  border-radius: 22px;
+  padding: 34px;
+  color: #fff;
+}
+
+.well-extra-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    90deg,
+    rgba(252, 107, 87, 1) 0%,
+    rgba(19, 168, 158, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.well-extra-card h2 {
+  margin: 0 0 18px !important;
+  color: #fff;
+}
+
+.well-extra-card p {
+  margin: 0 !important;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 700px) {
+  .well-section-title {
+    margin-bottom: 24px;
+  }
+
+  .well-extra-card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-card.is-after .service-card-inner {
+    filter: blur(0) !important;
+    opacity: 1 !important;
+    transform: scale(1.01) !important;
+  }
+
+  .service-card.is-active .service-card-inner {
+    filter: blur(0) !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+  }
+
+  .service-card.is-before .service-card-inner {
+    filter: blur(1px) !important;
+    opacity: 0.75 !important;
+  }
+}
+

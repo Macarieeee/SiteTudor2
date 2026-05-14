@@ -1,54 +1,62 @@
 document.addEventListener("DOMContentLoaded", function () {
-    function initHeroSlider(selector, images, intervalTime = 5000) {
-      const hero = document.querySelector(selector);
-      if (!hero) return;
+  function initHeroSlider(selector, images, intervalTime = 5000) {
+    const hero = document.querySelector(selector);
+    if (!hero) return;
 
-      hero.classList.add("smooth-hero-slider");
+    hero.classList.add("smooth-hero-slider");
 
-      const layerA = document.createElement("div");
-      const layerB = document.createElement("div");
+    const layerA = document.createElement("div");
+    const layerB = document.createElement("div");
 
-      layerA.className = "hero-bg-layer active";
-      layerB.className = "hero-bg-layer";
+    layerA.className = "hero-bg-layer active";
+    layerB.className = "hero-bg-layer";
 
-      hero.prepend(layerB);
-      hero.prepend(layerA);
+    hero.prepend(layerB);
+    hero.prepend(layerA);
 
-      let current = 0;
-      let showingA = true;
+    let current = 0;
+    let showingA = true;
 
-      layerA.style.backgroundImage = `url("${images[0]}")`;
-      layerB.style.backgroundImage = `url("${images[1]}")`;
+    layerA.style.backgroundImage = `url("${images[0]}")`;
+    layerB.style.backgroundImage = `url("${images[1] || images[0]}")`;
 
-      function changeSlide() {
-        const next = (current + 1) % images.length;
-        const activeLayer = showingA ? layerA : layerB;
-        const nextLayer = showingA ? layerB : layerA;
+    function changeSlide() {
+      const next = (current + 1) % images.length;
+      const activeLayer = showingA ? layerA : layerB;
+      const nextLayer = showingA ? layerB : layerA;
 
-        nextLayer.style.backgroundImage = `url("${images[next]}")`;
+      nextLayer.style.backgroundImage = `url("${images[next]}")`;
 
-        activeLayer.classList.remove("active");
-        nextLayer.classList.add("active");
+      activeLayer.classList.remove("active");
+      nextLayer.classList.add("active");
 
-        current = next;
-        showingA = !showingA;
-      }
-
-      setInterval(changeSlide, intervalTime);
+      current = next;
+      showingA = !showingA;
     }
 
-    initHeroSlider(".hero-slider", [
-      "bun (3)-min.png",
-      "bun (4)-min.png",
-      "bun-min.png"
-    ]);
+    if (images.length > 1) {
+      setInterval(changeSlide, intervalTime);
+    }
+  }
 
-    initHeroSlider(".hero-slider-btm", [
-      "Bt banner 1.jpg",
-      "BT Banner 02.jpg",
-      "Bt banner 6.jpg"
-    ]);
-  });
+  initHeroSlider(".hero-slider", [
+    "bun (3)-min.png",
+    "bun (4)-min.png",
+    "bun-min.png"
+  ]);
+
+  initHeroSlider(".hero-slider-btm", [
+    "Bt banner 1.jpg",
+    "BT Banner 02.jpg",
+    "Bt banner 6.jpg"
+  ]);
+
+  initHeroSlider(".hero-bg", [
+    "aLeisure slider 1.jpg",
+    "aLeisure Slider 2.jpg",
+    "aLeisure Slider 3.jpeg"
+  ]);
+});
 
   document.addEventListener("DOMContentLoaded", () => {
     const reveals = document.querySelectorAll(".corporate-success .reveal");
