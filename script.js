@@ -40,21 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   initHeroSlider(".hero-slider", [
-    "bun (3)-min.png",
-    "bun (4)-min.png",
-    "bun-min.png"
+    "assets/bun (3)-min.png",
+    "assets/bun (4)-min.png",
+    "assets/bun-min.png"
   ]);
 
   initHeroSlider(".hero-slider-btm", [
-    "Bt banner 1.jpg",
-    "BT Banner 02.jpg",
-    "Bt banner 6.jpg"
+    "assets/Bt banner 1.jpg",
+    "assets/BT banner 02.jpg",
+    "assets/Bt banner 6.jpg"
   ]);
 
   initHeroSlider(".hero-bg", [
-    "aLeisure slider 1.jpg",
-    "aLeisure Slider 2.jpg",
-    "aLeisure Slider 3.jpeg"
+    "assets/aLeisure slider 1.jpg",
+    "assets/aLeisure Slider 2.jpg",
+    "assets/aLeisure Slider 3.jpeg"
   ]);
 });
 
