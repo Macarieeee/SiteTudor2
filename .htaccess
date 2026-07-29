@@ -1,0 +1,73 @@
+Options -MultiViews
+RewriteEngine On
+
+# Redirect old public HTML URLs to their clean, descriptive equivalents.
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]) [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+about\.html(?:[\s?]) [NC]
+RewriteRule ^about\.html$ /despre-noi [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+services\.html(?:[\s?]) [NC]
+RewriteRule ^services\.html$ /servicii [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+businessevents\.html(?:[\s?]) [NC]
+RewriteRule ^businessevents\.html$ /evenimente-corporate [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+businesstravelmanagement\.html(?:[\s?]) [NC]
+RewriteRule ^businesstravelmanagement\.html$ /business-travel [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+businesstravelmanagement2\.html(?:[\s?]) [NC]
+RewriteRule ^businesstravelmanagement2\.html$ /business-travel-management [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+teambuilding\.html(?:[\s?]) [NC]
+RewriteRule ^teambuilding\.html$ /team-building [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+marketing&pr\.html(?:[\s?]) [NC]
+RewriteRule ^marketing&pr\.html$ /marketing-pr [R=301,L,NE]
+
+RewriteCond %{THE_REQUEST} \s/+incentives\.html(?:[\s?]) [NC]
+RewriteRule ^incentives\.html$ /programe-incentive [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+abexperience\.html(?:[\s?]) [NC]
+RewriteRule ^abexperience\.html$ /ab-experience [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+leisure\.html(?:[\s?]) [NC]
+RewriteRule ^leisure\.html$ /exclusive-leisure [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+leisuretravel\.html(?:[\s?]) [NC]
+RewriteRule ^leisuretravel\.html$ /leisure-travel-management [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+contactUs\.html(?:[\s?]) [NC]
+RewriteRule ^contactUs\.html$ /contact [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+politica-de-confidentialitate\.html(?:[\s?]) [NC]
+RewriteRule ^politica-de-confidentialitate\.html$ /politica-de-confidentialitate [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+termeni-si-conditii\.html(?:[\s?]) [NC]
+RewriteRule ^termeni-si-conditii\.html$ /termeni-si-conditii [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+service\.html(?:[\s?]) [NC]
+RewriteRule ^service\.html$ /serviciu [R=301,L]
+
+# Resolve clean URLs internally while keeping them visible in the browser.
+RewriteRule ^despre-noi/?$ about.html [L]
+RewriteRule ^servicii/?$ services.html [L]
+RewriteRule ^evenimente-corporate/?$ businessevents.html [L]
+RewriteRule ^business-travel/?$ businesstravelmanagement.html [L]
+RewriteRule ^business-travel-management/?$ businesstravelmanagement2.html [L]
+RewriteRule ^team-building/?$ teambuilding.html [L]
+RewriteRule ^marketing-pr/?$ marketing&pr.html [L,NE]
+RewriteRule ^programe-incentive/?$ incentives.html [L]
+RewriteRule ^ab-experience/?$ abexperience.html [L]
+RewriteRule ^exclusive-leisure/?$ leisure.html [L]
+RewriteRule ^leisure-travel-management/?$ leisuretravel.html [L]
+RewriteRule ^contact/?$ contactUs.html [L]
+RewriteRule ^politica-de-confidentialitate/?$ politica-de-confidentialitate.html [L]
+RewriteRule ^termeni-si-conditii/?$ termeni-si-conditii.html [L]
+RewriteRule ^serviciu/?$ service.html [L]
+
+# Fallback for any future root-level HTML page.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^./]+)/?$ $1.html [L]
