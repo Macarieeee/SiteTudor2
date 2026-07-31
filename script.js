@@ -1,7 +1,66 @@
+// Schimbă aici cele 3 imagini pentru fiecare pagină de serviciu.
+// Cheia trebuie să corespundă atributului data-hero-slider din pagina HTML.
+const HERO_SLIDES = {
+  home: [
+    "assets/bun (3)-min.webp",
+    "assets/bun (4)-min.webp",
+    "assets/bun-min.webp",
+  ],
+  "business-events": [
+    "assets/CorporateEvents-Slider1.webp",
+    "assets/CorporateEvents-Slider2.webp",
+    "assets/CorporateEvents-Slider3.webp",
+  ],
+  "marketing-pr": [
+    "assets/Marketing&PR-Slider1.webp",
+    "assets/Marketing&PR-Slider2.webp",
+    "assets/Marketing&PR-Slider3.webp",
+  ],
+  teambuilding: [
+    "assets/TeamBuilding-Slider1.webp",
+    "assets/TeamBuilding-Slider2.webp",
+    "assets/TeamBuilding-Slider3.webp",
+  ],
+  incentives: [
+    "assets/Incentives-Slider1.webp",
+    "assets/Incentives-Slider2.webp",
+    "assets/Incentives-Slider3.webp",
+  ],
+  "ab-experiences": [
+    "assets/ABExperience-Slider1.webp",
+    "assets/ABExperience-Slider2.webp",
+    "assets/ABExperience-Slider3.webp",
+  ],
+  "business-travel": [
+    "assets/BusinessTravelManagement-Slider1.webp",
+    "assets/BusinessTravelManagement-Slider2.webp",
+    "assets/BusinessTravelManagement-Slider3.webp",
+  ],
+  "business-travel-management": [
+    "assets/BusinessTravelManagement-Slider1.webp",
+    "assets/BusinessTravelManagement-Slider2.webp",
+    "assets/BusinessTravelManagement-Slider3.webp",
+  ],
+  "leisure-travel": [
+    "assets/bun (3)-min.webp",
+    "assets/bun (4)-min.webp",
+    "assets/bun-min.webp",
+  ],
+  "exclusive-leisure": [
+    "assets/aLeisure slider 1.webp",
+    "assets/aLeisure Slider 2.webp",
+    "assets/aLeisure Slider 3.webp",
+  ],
+  service: [
+    "assets/CorporateEvents-Slider1.webp",
+    "assets/CorporateEvents-Slider2.webp",
+    "assets/CorporateEvents-Slider3.webp",
+  ],
+};
+
 document.addEventListener("DOMContentLoaded", function () {
-  function initHeroSlider(selector, images, intervalTime = 5000) {
-    const hero = document.querySelector(selector);
-    if (!hero) return;
+  function initHeroSlider(hero, images, intervalTime = 5000) {
+    if (!hero || !Array.isArray(images) || images.length === 0) return;
 
     hero.classList.add("smooth-hero-slider");
 
@@ -39,23 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  initHeroSlider(".hero-slider", [
-    "assets/bun (3)-min.png",
-    "assets/bun (4)-min.png",
-    "assets/bun-min.png"
-  ]);
-
-  initHeroSlider(".hero-slider-btm", [
-    "assets/Bt banner 1.jpg",
-    "assets/BT banner 02.jpg",
-    "assets/Bt banner 6.jpg"
-  ]);
-
-  initHeroSlider(".hero-bg", [
-    "assets/aLeisure slider 1.jpg",
-    "assets/aLeisure Slider 2.jpg",
-    "assets/aLeisure Slider 3.jpeg"
-  ]);
+  document.querySelectorAll("[data-hero-slider]").forEach(function (hero) {
+    const sliderName = hero.dataset.heroSlider;
+    const intervalTime = Number(hero.dataset.heroInterval) || 5000;
+    initHeroSlider(hero, HERO_SLIDES[sliderName], intervalTime);
+  });
 });
 
   document.addEventListener("DOMContentLoaded", () => {
