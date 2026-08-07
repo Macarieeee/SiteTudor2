@@ -691,6 +691,79 @@
       transform: scale(.985);
     }
 
+    .brochure-expand {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 5;
+      min-height: 44px;
+      padding: 0 15px;
+      border: 1px solid rgba(200, 173, 127, .55);
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      background: rgba(5, 7, 11, .82);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .brochure-expand:hover {
+      color: #0b0f18;
+      background: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .brochure-expand svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .brochure-viewer:fullscreen,
+    .brochure-viewer.is-expanded {
+      width: 100vw !important;
+      height: 100vh !important;
+      max-width: none !important;
+      max-height: none !important;
+      padding: clamp(14px, 2vw, 28px) !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: #05070b;
+    }
+
+    .brochure-viewer.is-expanded {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 10000 !important;
+    }
+
+    .brochure-viewer:fullscreen img,
+    .brochure-viewer.is-expanded img {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: none !important;
+      border-radius: 0;
+      object-fit: contain;
+    }
+
+    @supports (height: 100dvh) {
+      .brochure-viewer:fullscreen,
+      .brochure-viewer.is-expanded {
+        height: 100dvh !important;
+      }
+    }
+
     .brochure-nav {
       position: absolute;
       top: 50%;
@@ -1234,6 +1307,185 @@
       color: #111;
     }
 
+    /* Mod compact pentru laptopuri: păstrează conținutul secțiunilor
+       lizibil, dar reduce înălțimile fixe care depășesc viewportul. */
+    @media (min-width: 769px) and (max-height: 950px) {
+      .section:not(.hero) {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+
+      .section.tight {
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+
+      .intro-centered-text p {
+        margin-bottom: 14px;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .category-grid {
+        gap: 16px !important;
+        margin-top: 28px !important;
+      }
+
+      .category-card {
+        min-height: 410px !important;
+      }
+
+      .category-content {
+        padding: 22px !important;
+      }
+
+      .category-title {
+        font-size: 25px !important;
+      }
+
+      .category-subtitle {
+        margin-bottom: 9px !important;
+        font-size: 14px !important;
+      }
+
+      .category-text {
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+      }
+
+      .benefits-wrap {
+        gap: 24px;
+      }
+
+      .benefits-grid {
+        gap: 12px;
+      }
+
+      .benefit-card {
+        padding: 18px;
+      }
+
+      .benefit-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 10px;
+      }
+
+      .benefit-card h3 {
+        margin-bottom: 8px;
+      }
+
+      .benefit-card p,
+      .benefits-copy p {
+        line-height: 1.55;
+      }
+
+      .brochure-card {
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .brochure-copy {
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+
+      .brochure-copy .title {
+        margin-bottom: 16px;
+      }
+
+      .brochure-copy p {
+        margin-bottom: 12px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .brochure-preview {
+        min-height: 540px;
+      }
+
+      .brochure-viewer {
+        min-height: 490px;
+      }
+
+      .brochure-viewer:not(:fullscreen):not(.is-expanded) img {
+        max-height: 470px;
+      }
+
+      .marquee-shell {
+        margin-top: 24px;
+        padding: 14px 0;
+      }
+
+      .possibilities-grid,
+      .quote-grid {
+        gap: 22px;
+      }
+
+      .story-list {
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .story-item {
+        padding: 15px;
+      }
+
+      .story-item p {
+        line-height: 1.55;
+      }
+
+      .collage {
+        gap: 12px;
+      }
+
+      .collage-card {
+        min-height: 195px;
+      }
+
+      .collage-card.tall {
+        min-height: 402px;
+      }
+
+      .collage-card-wide {
+        min-height: 165px;
+      }
+
+      .steps-grid {
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .flip-card,
+      .flip-inner {
+        min-height: 340px;
+      }
+
+      .fit-grid,
+      .services-strip {
+        margin-top: 20px;
+      }
+
+      .cta-box {
+        margin-top: 22px;
+        padding: 28px;
+      }
+
+      .quote-copy {
+        padding: 25px;
+      }
+
+      .quote-copy p,
+      .cta-box p {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .quote-form {
+        padding: 22px;
+      }
+    }
+
     
 
     @media(max-width:1180px) {
@@ -1655,6 +1907,13 @@
 
               <img id="brochureImage" src="assets/Brosura1.webp" alt="Broșură Exclusive Leisure - pagina 1" />
 
+              <button type="button" class="brochure-expand" id="expandBrochure" aria-label="Vezi broșura pe tot ecranul" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/>
+                </svg>
+                <span>Extinde</span>
+              </button>
+
               <button type="button" class="brochure-nav next" id="nextPage" aria-label="Pagina următoare">›</button>
             </div>
 
@@ -1670,21 +1929,21 @@
         <div class="marquee-shell">
           <div class="marquee">
             <div class="marquee-track">
-              <span class="pill">Safari</span><span class="pill">Cruises</span><span class="pill">Resorts</span><span
-                class="pill">Custom Trips</span><span class="pill">Wellness</span><span
-                class="pill">Honeymoon</span><span class="pill">Sailing</span><span class="pill">Family
-                Trips</span><span class="pill">Concerts</span><span class="pill">Formula 1</span><span
-                class="pill">Ski</span><span class="pill">Winter</span><span class="pill">Gastronomy</span><span
-                class="pill">Cultural</span>
+              <span class="pill">Safari</span><span class="pill">Croaziere</span><span class="pill">Resorturi</span><span
+                class="pill">Călătorii personalizate</span><span class="pill">Wellness</span><span
+                class="pill">Luna de miere</span><span class="pill">Navigație</span><span class="pill">Vacanțe în
+                familie</span><span class="pill">Concerte</span><span class="pill">Formula 1</span><span
+                class="pill">Schi</span><span class="pill">Iarnă</span><span class="pill">Gastronomie</span><span
+                class="pill">Cultură</span>
             </div>
 
             <div class="marquee-track" aria-hidden="true">
-              <span class="pill">Safari</span><span class="pill">Cruises</span><span class="pill">Resorts</span><span
-                class="pill">Custom Trips</span><span class="pill">Wellness</span><span
-                class="pill">Honeymoon</span><span class="pill">Sailing</span><span class="pill">Family
-                Trips</span><span class="pill">Concerts</span><span class="pill">Formula 1</span><span
-                class="pill">Ski</span><span class="pill">Winter</span><span class="pill">Gastronomy</span><span
-                class="pill">Cultural</span>
+              <span class="pill">Safari</span><span class="pill">Croaziere</span><span class="pill">Resorturi</span><span
+                class="pill">Călătorii personalizate</span><span class="pill">Wellness</span><span
+                class="pill">Luna de miere</span><span class="pill">Navigație</span><span class="pill">Vacanțe în
+                familie</span><span class="pill">Concerte</span><span class="pill">Formula 1</span><span
+                class="pill">Schi</span><span class="pill">Iarnă</span><span class="pill">Gastronomie</span><span
+                class="pill">Cultură</span>
             </div>
           </div>
         </div>
@@ -1697,7 +1956,7 @@
           <div>
             <div class="eyebrow">Ce facem pentru tine?</div>
             <h2 class="title smaller">Spune-ne ce vrei să simți sau să experimentezi. De restul ne ocupăm noi.</h2>
-            <p class="lead">Uite câteva exemple de situații, doar ca să înțelegi modul în care putem lucra:</p>
+            <p class="lead">Pornim de la preferințele, ritmul și așteptările tale pentru a construi experiența potrivită:</p>
 
             <div class="story-list">
               <article class="story-item">
@@ -1773,8 +2032,8 @@
       <div class="container">
         <div class="eyebrow">Cum funcționează?</div>
         <h2 class="title smaller">Totul începe cu tine.</h2>
-        <p class="lead">Mai jos ai varianta premium pentru zona de proces. Pe desktop, cardurile se întorc la hover. Pe
-          mobil, se întorc la tap.</p>
+        <p class="lead">De la prima conversație până la întoarcerea acasă, fiecare etapă este planificată în jurul
+          preferințelor tale, cu atenție, discreție și asistență dedicată.</p>
         <div class="mobile-note">Pe mobil, apasă pe card pentru a vedea detaliile.</div>
 
         <div class="steps-grid">
@@ -1858,8 +2117,8 @@
         <div class="cta-box">
           <div class="eyebrow">Orice este posibil</div>
           <h2 class="title smaller">Spune-ne ce vrei să simți sau să experimentezi.</h2>
-          <p>Nu există dorințe prea specifice. Există doar experiențe încă necreate. Exact aici se vede diferența dintre
-            o rezervare și un travel design făcut cum trebuie.</p>
+          <p>Transformăm dorințele tale într-un itinerariu coerent, atent documentat și perfect adaptat ritmului tău.
+            Mai mult decât o rezervare, primești o experiență creată integral pentru tine.</p>
         </div>
       </div>
     </section>
@@ -1984,7 +2243,7 @@
               role="region"
               aria-label="Email Form success"
             >
-              <div>Thank you! Your submission has been received!</div>
+              <div>Îți mulțumim! Abonarea a fost înregistrată.</div>
             </div>
             <div
               class="error-message w-form-fail"
@@ -1992,7 +2251,7 @@
               role="region"
               aria-label="Email Form failure"
             >
-              <div>Oops! Something went wrong while submitting the form.</div>
+              <div>A apărut o problemă. Te rugăm să încerci din nou.</div>
             </div>
           </div>
         </div>
@@ -2109,7 +2368,7 @@
             </div>
           </div>
           <div class="footer-block">
-            <h4 class="footer-title-24px">Legal</h4>
+            <h4 class="footer-title-24px">Informații legale</h4>
             <div class="link-list">
               <a href="assets/Contractul%20cu%20turistul%202026.pdf" download class="footer-link-wrapper footer-download-link w-inline-block"><div class="footer-link"><div class="text">Contractul cu turistul 2026</div><div class="text">Contractul cu turistul 2026</div></div></a>
               <a href="assets/GDPR%20website.pdf" download class="footer-link-wrapper footer-download-link w-inline-block"><div class="footer-link"><div class="text">GDPR website</div><div class="text">GDPR website</div></div></a>
@@ -2158,7 +2417,7 @@
             id="w-node-aac83d4d-a525-7650-b0e5-0bd9af40d457-3321ffb5"
             class="footer-block"
           >
-            <h4 class="footer-title-24px">Contact Us</h4>
+            <h4 class="footer-title-24px">Contact</h4>
             <div class="vertical-left-stretch-20px-gap">
               <div class="horizontal-left-center-20px-gap">
                 <div class="footer-icon-primary" style="background: #C8AD7F;">
@@ -2299,7 +2558,7 @@
 
     document.getElementById("travelForm")?.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("Formularul este pregătit vizual. Următorul pas este conectarea la EmailJS sau backend.");
+      alert("Îți mulțumim pentru interes! Pentru o solicitare imediată, ne poți scrie la office@avantsolutions.ro.");
     });
 
     const brochurePages = [
@@ -2321,6 +2580,7 @@
     const totalPages = document.getElementById("totalPages");
     const brochureDots = document.getElementById("brochureDots");
     const viewer = document.getElementById("brochureViewer");
+    const expandBrochure = document.getElementById("expandBrochure");
 
     const navButtons = [
       document.getElementById("prevPage"),
@@ -2390,6 +2650,41 @@
     document.getElementById("prevPageMobile")?.addEventListener("click", prevBrochurePage);
     document.getElementById("nextPageMobile")?.addEventListener("click", nextBrochurePage);
 
+    function setBrochureExpanded(isExpanded) {
+      if (!viewer || !expandBrochure) return;
+      viewer.classList.toggle("is-expanded", isExpanded && document.fullscreenElement !== viewer);
+      expandBrochure.setAttribute("aria-pressed", String(isExpanded));
+      expandBrochure.setAttribute("aria-label", isExpanded ? "Închide afișarea pe tot ecranul" : "Vezi broșura pe tot ecranul");
+      expandBrochure.querySelector("span").textContent = isExpanded ? "Închide" : "Extinde";
+      document.body.style.overflow = isExpanded ? "hidden" : "";
+    }
+
+    expandBrochure?.addEventListener("click", async () => {
+      const isExpanded = document.fullscreenElement === viewer || viewer.classList.contains("is-expanded");
+
+      if (isExpanded) {
+        if (document.fullscreenElement) await document.exitFullscreen();
+        setBrochureExpanded(false);
+        return;
+      }
+
+      if (viewer.requestFullscreen) {
+        try {
+          await viewer.requestFullscreen();
+          setBrochureExpanded(true);
+          return;
+        } catch (_) {
+          // Browserul nu permite fullscreen; folosim varianta CSS.
+        }
+      }
+
+      setBrochureExpanded(true);
+    });
+
+    document.addEventListener("fullscreenchange", () => {
+      setBrochureExpanded(document.fullscreenElement === viewer);
+    });
+
     document.addEventListener("keydown", (event) => {
       const section = document.getElementById("brosura");
       if (!section) return;
@@ -2400,6 +2695,9 @@
 
       if (event.key === "ArrowRight") nextBrochurePage();
       if (event.key === "ArrowLeft") prevBrochurePage();
+      if (event.key === "Escape" && viewer?.classList.contains("is-expanded")) {
+        setBrochureExpanded(false);
+      }
     });
 
     let touchStartX = 0;
