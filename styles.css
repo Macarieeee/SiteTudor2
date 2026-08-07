@@ -169,7 +169,8 @@ html {
   display: inline-block;
   background-color: #13a89e;
   color: white;
-  padding: 12px 24px;
+  padding: 12px 24px !important;
+  padding-bottom: 12px !important;
   font-weight: bold;
   border-radius: 60px;
   text-decoration: none;
@@ -2803,6 +2804,38 @@ img {
   min-height: 100vh;
   overflow: hidden;
   background: #000;
+}
+
+/* Hero-urile paginilor de servicii trebuie să înceapă direct sub navigație.
+   Elimină spațiul superior moștenit de la secțiunea generică Webflow. */
+section.section:has(> [data-hero-slider]) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+section.section > [data-hero-slider] {
+  margin-top: -100px !important;
+  width: 100% !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+  flex: 0 0 100vh !important;
+  flex-shrink: 0 !important;
+}
+
+@supports (height: 100svh) {
+  section.section > [data-hero-slider] {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    flex-basis: 100svh !important;
+  }
 }
 
 .hero-bg-layer {
